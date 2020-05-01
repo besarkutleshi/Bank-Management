@@ -1,5 +1,95 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Clients
 @{
+    ViewBag.Title = "Update Client";
+
 }
+
+<div class="container-fluid">
+    <form action="UpdateClient" method="post">
+        <div class="row">
+            <fieldset>
+                <legend>Client Data:</legend>
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label for="ID">ID </label>
+                        <input id="ID" type="text" asp-for="PersonId" class="form-control" disabled />
+                        <span asp-validation-for="PersonId" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="idName">Name </label>
+                        <input id="idName" type="text" asp-for="Person.Name" class="form-control" placeholder="Name" autofocus required />
+                        <span asp-validation-for="Person.Name" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="idSurname">Surname </label>
+                        <input id="idSurname" type="text" asp-for="Person.Surname" class="form-control" placeholder="Surname" required />
+                        <span asp-validation-for="Person.Surname" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="idAge">Age </label>
+                        <input id="idAge" type="text" asp-for="Person.Age" class="form-control" placeholder="Age" required />
+                        <span asp-validation-for="Person.Age" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="idPersonalNr">Personal Nr</label>
+                        <input id="idPersonalNr" type="text" asp-for="Person.PersonalNumber" class="form-control" placeholder="Personal Number" required />
+                        <span asp-validation-for="Person.PersonalNumber" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="idNrTel">Nr Tel </label>
+                        <input id="idNrTel" type="text" asp-for="Person.NrTel" class="form-control" placeholder="Nr Tel" required />
+                        <span asp-validation-for="Person.NrTel" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="idEmail">Email </label>
+                        <input id="idEmail" type="text" asp-for="Person.Email" class="form-control" placeholder="Email" required />
+                        <span asp-validation-for="Person.Email" class="text-danger"></span>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Client Address</legend>
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label for="idStreet">Street </label>
+                        <input id="idStreet" type="text" asp-for="Person.Street" class="form-control" placeholder="Street" required />
+                        <span asp-validation-for="Person.Street" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="idCity">City </label>
+                        <input id="idCity" type="text" asp-for="Person.City" class="form-control" placeholder="City" required />
+                        <span asp-validation-for="Person.City" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="idStreetNr">Street Nr. </label>
+                        <input id="idStreetNr" type="text" asp-for="Person.StreetNr" class="form-control" placeholder="Street Nr." required />
+                        <span asp-validation-for="Person.StreetNr" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="idCountry">Country</label>
+                        <input id="idCountry" type="text" asp-for="Person.Country" class="form-control" placeholder="Country" required />
+                        <span asp-validation-for="Person.Country" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="idPostalCode">Postal Code </label>
+                        <input id="idPostalCode" type="text" asp-for="Person.PostalCode" class="form-control" placeholder="Postal Code" required />
+                        <span asp-validation-for="Person.PostalCode" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="idIsPremium">Is Premium</label>
+                        <select id="idIsPremium" asp-for="IsPremium" class="form-control">
+                            <option value="@true">Yes</option>
+                            <option value="@false">No</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <br /><br />
+        <div class="row">
+            <div class="col-sm-12">
+                <button class="btn btn-primary" type="submit" style="width:100%">Register Client</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -58,6 +58,7 @@ namespace WebProjekti
             services.AddSingleton<IAuthorizationHandler, SuperAdminHandler>();
             services.AddScoped<EmployeeRepository>();
             services.AddScoped<DepartamentRepository>();
+            services.AddScoped<ClientRepository>();
 
             services.AddSingleton<DataProtectionPurposeStrings>();
 
