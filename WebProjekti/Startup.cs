@@ -60,7 +60,7 @@ namespace WebProjekti
             services.AddScoped<EmployeeRepository>();
             services.AddScoped<DepartamentRepository>();
             services.AddScoped<ClientRepository>();
-            services.AddScoped<AccountRepository>();
+            services.AddScoped<CheckingAccountRepository>();
 
             services.AddSingleton<DataProtectionPurposeStrings>();
 

@@ -172,7 +172,7 @@ namespace DataAccessLayer
 
             modelBuilder.Entity<CheckingAccounts>(entity =>
             {
-
+                entity.HasKey(c => c.AccountId);
                 entity.Property(e => e.AccountId).HasColumnName("AccountID");
 
                 entity.Property(e => e.Interes).HasColumnType("money");
@@ -309,6 +309,7 @@ namespace DataAccessLayer
 
             modelBuilder.Entity<SavingAccounts>(entity =>
             {
+                entity.HasKey(c => c.AccountId);
 
                 entity.Property(e => e.AccountId).HasColumnName("AccountID");
 

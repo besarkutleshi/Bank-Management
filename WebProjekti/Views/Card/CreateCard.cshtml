@@ -23,27 +23,27 @@
                     <div class="col-sm-4 form-group">
                         <label for="cardnumber">Card Number</label>
                         <input type="text" id="cardnumber" class="form-control" asp-for="CardNumber" required autofocus />
-                        <span asp-validation-for="CardNumber"class="text-danger"></span>
+                        <span asp-validation-for="CardNumber" class="text-danger"></span>
                     </div>
                     <div class="col-sm-4 form-group">
                         <label for="accountnumber">Account Number</label>
                         <input type="text" id="accountnumber" class="form-control" asp-for="AccountNumber" required autofocus />
-                        <span asp-validation-for="AccountNumber"class="text-danger"></span>
+                        <span asp-validation-for="AccountNumber" class="text-danger"></span>
                     </div>
                     <div class="col-sm-4 form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" class="form-control" asp-for="Password" required autofocus />
-                        <span asp-validation-for="Password"class="text-danger"></span>
+                        <input type="password" id="password" class="form-control" asp-for="Password" required/>
+                        <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
                     <div class="col-sm-4 form-group">
                         <label for="balance">Balance</label>
-                        <input type="text" id="balance" class="form-control" asp-for="Balance" required autofocus />
-                        <span asp-validation-for="Balance"class="text-danger"></span>
+                        <input type="text" id="balance" class="form-control" asp-for="Balance" required/>
+                        <span asp-validation-for="Balance" class="text-danger"></span>
                     </div>
                     <div class="col-sm-4 form-group">
                         <label for="activ">Activ</label>
-                        <select id="activ" class="form-control" asp-for="Activ">
-                            <option value="-1">Choose</option>
+                        <select id="activ" class="form-control" asp-for="Activ" required>
+                            <option value="">Choose</option>
                             <option value="@true">Yes</option>
                             <option value="@false">No</option>
                         </select>
@@ -51,11 +51,15 @@
                     </div>
                     <div class="col-sm-4 form-group">
                         <label for="type">Type</label>
-                        <select id="type" class="form-control" name="type">
-                            <option value="-1">Choose</option>
-                            <option value="1">Checking Account</option>
-                            <option value="2">Saving Account</option>
+                        <select id="type" class="form-control" name="type" required>
+                            <option value="">Choose</option>
+                            <option value="CheckingAccount">Checking Account</option>
+                            <option value="SavingAccount">Saving Account</option>
                         </select>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="interes">Interes</label>
+                        <input type="text" id="interes" class="form-control" name="interes" required />
                     </div>
                 </div>
                 <br /><br />

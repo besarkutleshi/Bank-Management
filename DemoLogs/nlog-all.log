@@ -1908,3 +1908,45 @@ System.InvalidOperationException: A second operation started on this context bef
 2020-05-01 22:55:12.3555|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
 2020-05-01 22:55:12.4318|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
 2020-05-01 22:55:12.4318|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-01 23:01:43.3695|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-01 23:01:43.4862|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-01 23:01:43.5014|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-01 23:18:14.2696|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-01 23:18:14.3763|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-01 23:18:14.3931|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-01 23:19:48.7688|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-01 23:20:14.4133|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-01 23:20:14.5465|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-01 23:20:14.5609|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-01 23:20:44.7025|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-01 23:23:52.3650|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-01 23:23:52.5015|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-01 23:23:52.5183|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-01 23:24:43.1954|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-01 23:25:00.0589|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-01 23:26:20.5079|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-01 23:26:20.6329|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-01 23:26:20.6487|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-01 23:27:32.4485|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-01 23:29:51.9461|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-01 23:29:52.0868|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-01 23:29:52.1072|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-01 23:30:17.2557|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-01 23:31:58.7142|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-01 23:31:58.8349|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-01 23:31:58.8538|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-01 23:32:29.5940|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-01 23:58:02.0813|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-01 23:58:02.2028|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-01 23:58:02.2226|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-02 00:00:14.6715|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-02 00:00:14.7894|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-02 00:00:14.8057|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-02 00:01:28.0174|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-02 00:01:28.1309|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-02 00:01:28.1555|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-02 00:06:01.5208|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-02 00:06:23.6050|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-02 00:08:03.5235|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-02 00:08:03.6732|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-02 00:08:03.6926|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
