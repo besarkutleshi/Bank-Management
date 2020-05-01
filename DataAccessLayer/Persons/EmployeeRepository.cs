@@ -24,56 +24,100 @@ namespace DataAccessLayer.Persons
 
         public async Task<ActionResult<Employees>> InsertEmployee(Employees obj)
         {
-            context.Employees.Add(obj);
-            if (await context.SaveChangesAsync() > 0)
+            try
             {
-                return obj;
+                context.Employees.Add(obj);
+                if (await context.SaveChangesAsync() > 0)
+                {
+                    return obj;
+                }
+                return null;
             }
-            return null;
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public async Task<ActionResult<Employees>> DeleteEmployee(int id)
         {
-            Employees emp = context.Employees.OfType<Employees>().Where(emp => emp.PersonId == id).FirstOrDefault();
-            context.Employees.Remove(emp);
-            if (await context.SaveChangesAsync() > 0)
+            try
             {
-                return emp;
+                EntityLayer.Persons.Persons p = context.Persons.Where(p => p.Id == id).FirstOrDefault();
+                Employees emp = context.Employees.OfType<Employees>().Where(emp => emp.PersonId == id).FirstOrDefault();
+                context.Employees.Remove(emp);
+                context.Persons.Remove(p);
+                if (await context.SaveChangesAsync() > 0)
+                {
+                    return emp;
+                }
+                return null;
             }
-            return null;
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public async Task<ActionResult<Employees>> UpdateEmployee(Employees emp)
         {
-            var person = context.Persons.Attach(emp.Person);
-            person.State = EntityState.Modified;
-            await context.SaveChangesAsync();
-            var employee = context.Employees.Attach(emp);
-            employee.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            await context.SaveChangesAsync();
-            return emp;
+            try
+            {
+                var person = context.Persons.Attach(emp.Person);
+                person.State = EntityState.Modified;
+                await context.SaveChangesAsync();
+                var employee = context.Employees.Attach(emp);
+                employee.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await context.SaveChangesAsync();
+                return emp;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public async Task<IEnumerable<Employees>> Read()
         {
-            await context.Persons.ToListAsync();
-            await context.Departaments.ToListAsync();
-            return await context.Employees.ToListAsync();
+            try
+            {
+                await context.Persons.ToListAsync();
+                await context.Departaments.ToListAsync();
+                return await context.Employees.ToListAsync();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public async Task<Employees> Read(int id)
         {
-            EntityLayer.Persons.Persons p = await context.Persons.Where(p => p.Id == id).FirstOrDefaultAsync();
-            Employees emps = await context.Employees.Where(emp => emp.PersonId == id).FirstOrDefaultAsync();
-            emps.Person = p;
-            return emps;        
+            try
+            {
+                EntityLayer.Persons.Persons p = await context.Persons.Where(p => p.Id == id).FirstOrDefaultAsync();
+                Employees emps = await context.Employees.Where(emp => emp.PersonId == id).FirstOrDefaultAsync();
+                emps.Person = p;
+                return emps;
+            }
+            catch (Exception)
+            {
+                return null;
+            }       
         }
 
         public async Task<Employees> Read(string name)
         {
-            EntityLayer.Persons.Persons p = await context.Persons.Where(p => p.Name == name).FirstOrDefaultAsync();
-            Employees emps = await context.Employees.Where(emp => emp.Person.Name == name).FirstOrDefaultAsync();
-            return emps;
+            try
+            {
+                EntityLayer.Persons.Persons p = await context.Persons.Where(p => p.Name == name).FirstOrDefaultAsync();
+                Employees emps = await context.Employees.Where(emp => emp.Person.Name == name).FirstOrDefaultAsync();
+                return emps;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }

@@ -33,12 +33,9 @@ namespace WebProjekti.Controllers
         [HttpPost]
         public async Task<IActionResult> InsertEmployee(Employees emp)
         {
-            if (ModelState.IsValid)
+            if (await _empRepository.InsertEmployee(emp) != null)
             {
-                if (await _empRepository.InsertEmployee(emp) != null)
-                {
-                    return RedirectToAction("ListEmployees");
-                }
+                return RedirectToAction("ListEmployees");
             }
             ViewBag.ErrorTitle = "Registration not successful";
             return View("Error");
