@@ -1,0 +1,169 @@
+﻿@model List<Employees>
+
+@{
+    ViewBag.Title = "List Employees";
+}
+
+<div class="">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    Employees
+                </div>
+                <div class="card-body" style="font-size:20px">
+                    Count : @Model.Count
+                </div>
+                <div class="card-footer">
+                    <a asp-action="InsertEmployee" asp-controller="Employee" class="btn btn-primary">Insert Employee</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    Employees
+                </div>
+                <div class="card-body" style="font-size:20px">
+                    Count : @Model.Count
+                </div>
+                <div class="card-footer">
+                    <a asp-action="InsertEmployee" asp-controller="Employee" class="btn btn-primary">Insert Employee</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    Employees
+                </div>
+                <div class="card-body" style="font-size:20px">
+                    Count : @Model.Count
+                </div>
+                <div class="card-footer">
+                    <a asp-action="InsertEmployee" asp-controller="Employee" class="btn btn-primary">Insert Employee</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div>
+    <div class="row">
+        @*<div class="col-sm-2 form-group">
+            <label for="searchBy">Search By </label>
+            <select id="searchBy" class="form-control">
+                <option value="0">ID</option>
+                <option value="2">Name</option>
+                <option value="12">Departament</option>
+            </select>
+        </div>
+        <div class="col-sm-4 form-group">
+            <label for="myInput">Search</label>
+            <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search" />
+        </div>*@
+        <div class="col-sm-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-center">Employee List</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive text-nowrap">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Personal Number</th>
+                                    <th>Name</th>
+                                    <th>Surname</th>
+                                    <th>Age</th>
+                                    <th>Street Nr</th>
+                                    <th>Street</th>
+                                    <th>City</th>
+                                    <th>Country</th>
+                                    <th>Postal Code</th>
+                                    <th>Email</th>
+                                    <th>NrTel</th>
+                                    <th>Departament</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Salary </th>
+                                    <th>Institution</th>
+                                    <th>Status</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Person.Id</td>
+                                        <td>@item.Person.PersonalNumber</td>
+                                        <td>@item.Person.Name</td>
+                                        <td>@item.Person.Surname</td>
+                                        <td>@item.Person.Age</td>
+                                        <td>@item.Person.StreetNr</td>
+                                        <td>@item.Person.Street</td>
+                                        <td>@item.Person.City</td>
+                                        <td>@item.Person.Country</td>
+                                        <td>@item.Person.PostalCode</td>
+                                        <td>@item.Person.Email</td>
+                                        <td>@item.Person.NrTel</td>
+                                        <td>@item.Departament.Name</td>
+                                        <td>@item.StartDate</td>
+                                        <td>@item.EndDate</td>
+                                        <td>@item.Salary</td>
+                                        <td>@item.Institution</td>
+                                        <td>@item.Status</td>
+                                        <td><a asp-action="UpdateEmployee" asp-controller="Employee" asp-route-id="@item.Person.Id" class="btn btn-primary">Update</a></td>
+                                        <td>
+                                            <form asp-action="DeleteEmployee" asp-controller="Employee" asp-route-id="@item.Person.Id" method="post">
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+
+
+    <script src="~/js/dataTables.bootstrap4.js"></script>
+    <script src="~/js/datatables-demo.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            var x = document.getElementById("searchBy").value;
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[x];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+}

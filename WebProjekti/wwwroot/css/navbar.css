@@ -1,0 +1,82 @@
+﻿.sidebar:hover .menu ul li span{
+    padding:0px 40px;
+    opacity:1;
+    pointer-events:visible;
+}
+
+.sidebar menu{
+    display:flex;
+    width:250px;
+    height:100%;
+    background:#0080ff;
+    color:#f2f2f2;
+}
+
+.menu a i{
+    margin:10px 0px 10px 20px;
+    font-size:30px;
+    font-weight:bolder;
+}
+
+.menu a span{
+    position:absolute;
+    margin:15px 32px;
+    font-size:15px;
+    opacity:0;
+    transition:1.2s;
+    color:white;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration:none;
+    list-style:none;
+    user-select:none;
+}
+
+body{
+    min-height:100vh;
+    font-family:'Roboto',sans-serif;
+}
+
+.sidebar{
+    position :fixed;
+    height:100%;
+    width:80px;
+    background:#0080ff;
+    overflow:hidden;
+    transition:.8s;
+    box-shadow:5px 10px 10px rgb(141,141,141);
+}
+
+.sidebar:hover{
+    width:250px;
+}
+
+.menu ul li {
+    display:flex;
+    padding:0 10px;
+    cursor:pointer;
+}
+
+.menu ul li i{
+    font-size:15px;
+    padding:10px 0 0px 0;
+}
+
+.menu ul li span{
+    position:absolute;
+    color:#ececec;
+    letter-spacing:1px;
+    padding:0px 0 0px 0;
+    opacity:0;
+    pointer-events:none;
+    font-size:15px;
+    transition:.8s;
+}
+.menu ul li:hover span{
+    margin-left:20px;
+    color:white;
+}

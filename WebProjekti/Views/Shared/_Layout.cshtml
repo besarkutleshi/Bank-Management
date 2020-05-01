@@ -1,0 +1,260 @@
+﻿@inject SignInManager<DataAccessLayer.ApplicationUser> SignInManager
+@inject UserManager<DataAccessLayer.ApplicationUser> UserManager
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebProjekti</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/css/Login.css" rel="stylesheet" />
+    <link href="~/css/style1.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <link href="~/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="p-4 pt-5">
+                @if (SignInManager.IsSignedIn(User) && (User.IsInRole("Super Admin") || User.IsInRole("Admin")))
+                {
+                    <h2 class="text-center" style="color:white">Bank</h2><br />
+                    <p style="color:wheat">Welcome <br /> @User.Identity.Name</p>
+                    <ul class="list-unstyled components mb-5">
+                        <li>
+                            <a asp-action="Login" asp-controller="Account">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#Client" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Client's</a>
+                            <ul class="collapse list-unstyled" id="Client">
+                                <li>
+                                    <a asp-action="InsertClient" asp-controller="Client">Register Client</a>
+                                </li>
+                                <li>
+                                    <a asp-action="ListClients" asp-controller="Client">List Client</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#pageEmployee" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Employee's</a>
+                            <ul class="collapse list-unstyled" id="pageEmployee">
+                                <li>
+                                    <a asp-action="InsertEmployee" asp-controller="Employee">Register Employee</a>
+                                </li>
+                                <li>
+                                    <a asp-action="ListEmployees" asp-controller="Employee">List Employee</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#pageAccounts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Account's</a>
+                            <ul class="collapse list-unstyled" id="pageAccounts">
+                                <li>
+                                    <a asp-action="CreateRole" asp-controller="Administration">Insert Account</a>
+                                </li>
+                                <li>
+                                    <a asp-action="ListRoles" asp-controller="Administration">List Account</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#pageCredits" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Credit's</a>
+                            <ul class="collapse list-unstyled" id="pageCredits">
+                                <li>
+                                    <a asp-action="CreateRole" asp-controller="Administration">Insert Credit</a>
+                                </li>
+                                <li>
+                                    <a asp-action="ListRoles" asp-controller="Administration">List Credit</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#pageUser" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage User's</a>
+                            <ul class="collapse list-unstyled" id="pageUser">
+                                <li>
+                                    <a asp-action="Register" asp-controller="Account">Register User</a>
+                                </li>
+                                <li>
+                                    <a asp-action="ListUsers" asp-controller="Administration">List User's</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Role's</a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li>
+                                    <a asp-action="CreateRole" asp-controller="Administration">Create Role</a>
+                                </li>
+                                <li>
+                                    <a asp-action="ListRoles" asp-controller="Administration">List Role</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                }
+                else if (SignInManager.IsSignedIn(User) && User.IsInRole("User"))
+                {
+                    <h2 class="text-center" style="color:white">Bank</h2><br />
+                    <p style="color:wheat">Welcome <br /> @User.Identity.Name</p>
+                    <ul class="list-unstyled components mb-5">
+                        <li>
+                            <a asp-action="Login" asp-controller="Account">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">My Account's</a>
+                        </li>
+                        <li>
+                            <a href="#">My Credit's</a>
+                        </li>
+                        <li>
+                            <a href="#">My Payment's</a>
+                        </li>
+                        <li>
+                            <a href="#">E-Banking</a>
+                        </li>
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li>
+                                    <a href="#">Page 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Page 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Page 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                }
+                else
+                {
+                    <h2 class="text-center" style="color:white">Bank</h2><br />
+                    <ul class="list-unstyled components mb-5">
+                        <li>
+                            <a asp-action="Login" asp-controller="Account">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#pageAcc" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Account's</a>
+                            <ul class="collapse list-unstyled" id="pageAcc">
+                                <li>
+                                    <a href="#">Checking Account</a>
+                                </li>
+                                <li>
+                                    <a href="#">Saving Account</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#pageCredit" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Credit's</a>
+                            <ul class="collapse list-unstyled" id="pageCredit">
+                                <li>
+                                    <a href="#">Personal Credit</a>
+                                </li>
+                                <li>
+                                    <a href="#">Expres Credit</a>
+                                </li>
+                                <li>
+                                    <a href="#">Student Credit</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fa fa-bars"></i>
+                        <span class="sr-only">Toggle Menu</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            <ul class="nav navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" asp-action="Logout" asp-controller="Account">Logout</a>
+                                </li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul class="nav navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" asp-action="Login" asp-controller="Account">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-action="Register" asp-controller="Account">Register</a>
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </nav>
+            <div class="container">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+    <footer class="border-top footer text-muted">
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/popper.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/dataTables.bootstrap4.js"></script>
+    <script src="~/js/datatables-demo.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace WebProjekti.Security
+{
+    public class SuperAdminHandler : AuthorizationHandler<ManageAdminRolesAndClaimsRequriment>
+    {
+        protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, ManageAdminRolesAndClaimsRequriment requirement)
+        {
+            if (context.User.IsInRole("Super Admin"))
+            {
+                context.Succeed(requirement);
+            }
+            return Task.CompletedTask;
+        }
+    }
+}

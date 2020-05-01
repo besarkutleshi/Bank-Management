@@ -1,0 +1,50 @@
+﻿@model LoginViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Sign In</h5>
+                    <form class="form-signin" method="post">
+                        <div class="form-label-group">
+                            <input type="email" id="inputEmail" class="form-control" asp-for="Email" name="email" placeholder="Email address" autofocus required>
+                            <label for="inputEmail">Email address</label>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+                            <label for="inputPassword">Password</label>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div asp-validation-summary="All" class="text-danger"></div>
+
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1" name="rememberme">Remember password</label>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-primary btn-block text-uppercase">Sign in</button>
+                        <div>
+                            <a asp-action="ForgotPassword" asp-controller="Account">Forgot Password</a>
+                        </div>
+                        <hr class="my-4">
+                    </form>
+                    <form class="form-signin" method="post" asp-action="ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl">
+                        @foreach (var providers in Model.ExternalLogins)
+                        {
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="provider" value="@providers.Name"><i class="fab fa-google mr-2"></i> @providers.DisplayName</button>
+                        }
+                    </form>
+                    <form class="form-signin" action="register" method="get">
+                        <hr class="my-4">
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
