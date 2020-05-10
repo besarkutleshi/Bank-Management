@@ -116,5 +116,11 @@ namespace DataAccessLayer.Persons
                 return null;
             }
         }
+
+        public async Task<Clients> GetCurrentClient(int id)
+        {
+            await _context.Persons.ToListAsync();
+            return await _context.Clients.FirstOrDefaultAsync(cl => cl.PersonId == id);
+        }
     }
 }

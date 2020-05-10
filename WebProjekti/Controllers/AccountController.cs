@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using DataAccessLayer;
 using DataAccessLayer.Persons;
+using EntityLayer.Persons;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -19,21 +20,23 @@ namespace WebProjekti.Controllers
         private readonly IConfiguration _config;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
+        private readonly ClientRepository _clientRepository;
         private readonly ILogger<AccountController> logger;
-        EmployeeRepository obj;
+        public static Clients CurrentClient = null;
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ILogger<AccountController> logger,
-            IConfiguration configuration,EmployeeRepository obj)
+            IConfiguration configuration,ClientRepository clientRepository)
         {
-            this.obj = obj;
+            this._clientRepository = clientRepository;
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.logger = logger;
             this._config = configuration;
         }
+
+
         [AcceptVerbs("Get", "Post")]
         [AllowAnonymous]
-
         public async Task<IActionResult> IsEmailInUse(string email)
         {
             var user = await userManager.FindByEmailAsync(email);
@@ -255,6 +258,7 @@ namespace WebProjekti.Controllers
 
                 if (result.Succeeded)
                 {
+                    CurrentClient = await _clientRepository.GetCurrentClient(user.ClientID);
                     var us = await userManager.FindByEmailAsync(model.Email);
                     var roles = await userManager.GetRolesAsync(us);
                     foreach (var item in roles)

@@ -8,6 +8,7 @@ using DataAccessLayer;
 using EntityLayer.Persons;
 using Microsoft.AspNetCore.Authorization;
 using DataAccessLayer.Departaments;
+using EntityLayer.Personeli;
 
 namespace WebProjekti.Controllers
 {
@@ -36,9 +37,10 @@ namespace WebProjekti.Controllers
             if (await _empRepository.InsertEmployee(emp) != null)
             {
                 return RedirectToAction("ListEmployees");
-                }
-                ViewBag.ErrorTitle = "Registration not successful";
-                return View("Error");
+                
+            }
+            ViewBag.ErrorTitle = "Registration not successful";
+            return View("Error");
         }
 
         [HttpPost]

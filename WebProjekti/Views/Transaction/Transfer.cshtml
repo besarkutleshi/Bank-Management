@@ -1,0 +1,52 @@
+﻿@model Transfer
+@{ 
+    ViewBag.Title = "Transfer";
+}
+
+    <div class="container">
+        <form action="MakeTransfer" method="post">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Make Transfer</h5>
+                            <div class="col-sm-12 form-group">
+                                <label for="FullName">Full Name</label>
+                                <input id="FullName" type="text" asp-for="FullName" class="form-control" required />
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label for="description">Transfer Description</label>
+                                <input id="description" type="text" asp-for="Description" class="form-control" required />
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label for="CardNumber">Card Number</label>
+                                <input id="CardNumber" type="text" asp-for="CardNumber" disabled value="@ViewBag.CardNumber" class="form-control" required />
+                                <span asp-validation-for="CardNumber" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label for="AccountNumber">Account Number</label>
+                                <input id="AccountNumber" type="text" asp-for="AccountNumber" disabled value="@ViewBag.AccountNumber" class="form-control" required />
+                                <span asp-validation-for="AccountNumber" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label for="toAccountNumber">To Account Number</label>
+                                <input id="toAccountNumber" type="text" asp-for="ToAccountNumber" class="form-control" required />
+                                <span asp-validation-for="ToAccountNumber" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label for="amount">Amount</label>
+                                <input id="amount" type="text" asp-for="Amount" class="form-control" required />
+                                <span asp-validation-for="Amount" class="text-danger"></span>
+                            </div>
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary mb-2">Make Transfer</button>
+                                <a href="#" class="btn btn-primary mb-2">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

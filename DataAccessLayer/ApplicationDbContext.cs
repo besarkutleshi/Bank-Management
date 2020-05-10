@@ -33,7 +33,6 @@ namespace DataAccessLayer
         public virtual DbSet<EntityLayer.Persons.Persons> Persons { get; set; }
         public virtual DbSet<SavingAccounts> SavingAccounts { get; set; }
         public virtual DbSet<StudentCredit> StudentCredit { get; set; }
-        public virtual DbSet<Transactions> Transactions { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -52,6 +51,7 @@ namespace DataAccessLayer
             #region
             modelBuilder.Entity<Accounts>(entity =>
             {
+                entity.HasKey(c => c.Id);
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.AccountNumber).HasMaxLength(50);
@@ -337,27 +337,6 @@ namespace DataAccessLayer
                     .HasConstraintName("FK__StudentCr__Credi__2DE6D218");
             });
 
-            modelBuilder.Entity<Transactions>(entity =>
-            {
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.AccountNumber).HasMaxLength(50);
-
-                entity.Property(e => e.ClientId).HasColumnName("ClientID");
-
-                entity.Property(e => e.Date).HasColumnType("date");
-
-                entity.Property(e => e.Sum).HasColumnType("money");
-
-                entity.Property(e => e.ToAccountNumber).HasMaxLength(50);
-
-                entity.Property(e => e.Type).HasMaxLength(50);
-
-                entity.HasOne(d => d.Client)
-                    .WithMany(p => p.Transactions)
-                    .HasForeignKey(d => d.ClientId)
-                    .HasConstraintName("FK__Transacti__Clien__25518C17");
-            });
             #endregion
             base.OnModelCreating(modelBuilder);
         }

@@ -9,4 +9,3 @@ C:\Users\Admin\Desktop\WebProjekti\EntityLayer\obj\Debug\netcoreapp3.1\EntityLay
 C:\Users\Admin\Desktop\WebProjekti\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.dll
 C:\Users\Admin\Desktop\WebProjekti\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.pdb
 C:\Users\Admin\Desktop\WebProjekti\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.genruntimeconfig.cache
-C:\Users\Admin\Desktop\WebProjekti\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csprojAssemblyReference.cache

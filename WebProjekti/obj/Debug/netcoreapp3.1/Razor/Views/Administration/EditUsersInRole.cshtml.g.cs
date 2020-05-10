@@ -68,8 +68,22 @@ using EntityLayer.Persons;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 9 "C:\Users\Admin\Desktop\WebProjekti\WebProjekti\Views\_ViewImports.cshtml"
+using EntityLayer.Accounts;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 10 "C:\Users\Admin\Desktop\WebProjekti\WebProjekti\Views\_ViewImports.cshtml"
+using EntityLayer.Transactions;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"419c8ac11a17ea990177c51f81fc463e986528a8", @"/Views/Administration/EditUsersInRole.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d774eabe4e957df6bad495ce5f09192d403c09ad", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b2786f95c442e09840e5a247e9799270e0bdf9ec", @"/Views/_ViewImports.cshtml")]
     public class Views_Administration_EditUsersInRole : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<UserRoleModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", "hidden", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -116,7 +130,7 @@ using EntityLayer.Persons;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n    <div class=\"container\">\r\n        <h5>Edit Users In Role</h5>\r\n       \r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "419c8ac11a17ea990177c51f81fc463e986528a87086", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "419c8ac11a17ea990177c51f81fc463e986528a87455", async() => {
                 WriteLiteral("\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    <h4>Select username to add in this role</h4>\r\n                </div>\r\n                <div class=\"card-body\">\r\n");
 #nullable restore
 #line 16 "C:\Users\Admin\Desktop\WebProjekti\WebProjekti\Views\Administration\EditUsersInRole.cshtml"
@@ -127,7 +141,7 @@ using EntityLayer.Persons;
 #line hidden
 #nullable disable
                 WriteLiteral("                        <div class=\"form-check m-1\">\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "419c8ac11a17ea990177c51f81fc463e986528a87942", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "419c8ac11a17ea990177c51f81fc463e986528a88311", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -150,7 +164,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "419c8ac11a17ea990177c51f81fc463e986528a89679", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "419c8ac11a17ea990177c51f81fc463e986528a810048", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -173,7 +187,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "419c8ac11a17ea990177c51f81fc463e986528a811422", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "419c8ac11a17ea990177c51f81fc463e986528a811792", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -195,7 +209,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "419c8ac11a17ea990177c51f81fc463e986528a813039", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "419c8ac11a17ea990177c51f81fc463e986528a813409", async() => {
 #nullable restore
 #line 22 "C:\Users\Admin\Desktop\WebProjekti\WebProjekti\Views\Administration\EditUsersInRole.cshtml"
                                                                                       Write(Model[i].Username);
@@ -232,7 +246,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
 #line hidden
 #nullable disable
                 WriteLiteral("                </div>\r\n                <div class=\"card-footer\">\r\n                    <input type=\"submit\" class=\"btn btn-primary\" name=\"name\" value=\"Update\" style=\"width:auto\" />\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "419c8ac11a17ea990177c51f81fc463e986528a815403", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "419c8ac11a17ea990177c51f81fc463e986528a815773", async() => {
                     WriteLiteral("Cancel");
                 }
                 );

@@ -68,8 +68,22 @@ using EntityLayer.Persons;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 9 "C:\Users\Admin\Desktop\WebProjekti\WebProjekti\Views\_ViewImports.cshtml"
+using EntityLayer.Accounts;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 10 "C:\Users\Admin\Desktop\WebProjekti\WebProjekti\Views\_ViewImports.cshtml"
+using EntityLayer.Transactions;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f0ae07a9c20081b1fce61c210050d259b94eab4c", @"/Views/Client/ListClient.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d774eabe4e957df6bad495ce5f09192d403c09ad", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b2786f95c442e09840e5a247e9799270e0bdf9ec", @"/Views/_ViewImports.cshtml")]
     public class Views_Client_ListClient : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Clients>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "InsertClient", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -137,7 +151,7 @@ using EntityLayer.Persons;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                </div>\r\n                <div class=\"card-footer\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0ae07a9c20081b1fce61c210050d259b94eab4c7440", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0ae07a9c20081b1fce61c210050d259b94eab4c7809", async() => {
                 WriteLiteral("Insert Client");
             }
             );
@@ -174,7 +188,7 @@ using EntityLayer.Persons;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                </div>\r\n                <div class=\"card-footer\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0ae07a9c20081b1fce61c210050d259b94eab4c9564", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0ae07a9c20081b1fce61c210050d259b94eab4c9933", async() => {
                 WriteLiteral("Insert Client");
             }
             );
@@ -211,7 +225,7 @@ using EntityLayer.Persons;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                </div>\r\n                <div class=\"card-footer\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0ae07a9c20081b1fce61c210050d259b94eab4c11693", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0ae07a9c20081b1fce61c210050d259b94eab4c12062", async() => {
                 WriteLiteral("Insert Client");
             }
             );
@@ -382,7 +396,7 @@ using EntityLayer.Persons;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                                            <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0ae07a9c20081b1fce61c210050d259b94eab4c19417", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0ae07a9c20081b1fce61c210050d259b94eab4c19786", async() => {
                 WriteLiteral("Update");
             }
             );
@@ -416,7 +430,7 @@ using EntityLayer.Persons;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</td>\r\n                                            <td>\r\n                                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0ae07a9c20081b1fce61c210050d259b94eab4c22030", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0ae07a9c20081b1fce61c210050d259b94eab4c22399", async() => {
                 WriteLiteral("\r\n                                                    <button type=\"submit\" class=\"btn btn-danger\">Delete</button>\r\n                                                ");
             }
             );

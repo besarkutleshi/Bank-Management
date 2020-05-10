@@ -7,46 +7,65 @@ using DataAccessLayer.Persons;
 using DataAccessLayer.Cards;
 using EntityLayer.Persons;
 using EntityLayer.Accounts;
-
 namespace WebProjekti.Controllers
 {
     public class CardController : Controller
     {
         private readonly ClientRepository _clientRepository;
-        private readonly CheckingAccountRepository _accountRepository;
-        public CardController(ClientRepository clientRepository, CheckingAccountRepository accountRepository)
+        private readonly AccountRepository _accountRepository;
+        public CardController(ClientRepository clientRepository,
+            AccountRepository savingAccounts)
         {
             _clientRepository = clientRepository;
-            _accountRepository = accountRepository;
+            _accountRepository = savingAccounts;
         }
         [HttpGet]
-        public async Task<IActionResult> CreateCard()
+        public async Task<IActionResult> InsertSavingAccount()
         {
             ViewBag.Clients = await _clientRepository.Read();
             return View();
         }
 
-        public async Task<IActionResult> CreateCard(Accounts obj,string type,decimal interes)
+        [HttpPost]
+        public async Task<IActionResult> InsertSavingAccount(SavingAccounts obj)
         {
-            switch (type)
+            obj.Account.StartDate = DateTime.Now;
+            if (await _accountRepository.Insert(obj) != null)
             {
-                case "CheckingAccount":
-                    CheckingAccounts checkingAccounts = new CheckingAccounts();
-                    obj.StartDate = DateTime.Now;
-                    checkingAccounts.Account = obj;
-                    checkingAccounts.Interes = interes;
-                    if (await _accountRepository.Insert(checkingAccounts) != null)
-                        return RedirectToAction("ListCards");
-                    break;
-                case "SavingAccount":
-                    SavingAccounts savingAccounts = new SavingAccounts();
-                    savingAccounts.Account = obj;
-                    if (await _accountRepository.Insert(savingAccounts) != null)
-                        return RedirectToAction("ListCards");
-                    break;
+                return RedirectToAction("AccountsList");
             }
-            ViewBag.ErrorMessage = "Registration not successful";
+            ViewBag.ErrorMessage = $"Not Register";
             return View("Error");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> InsertCheckingAccount()
+        {
+            ViewBag.Clients = await _clientRepository.Read();
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> InsertCheckingAccount(CheckingAccounts obj)
+        {
+            obj.Account.StartDate = DateTime.Now;
+            if (await _accountRepository.Insert(obj) != null)
+            {
+                return RedirectToAction("AccountsList");
+            }
+            ViewBag.ErrorMessage = $"Not Register";
+            return View("Error");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AccountsList()
+        {
+            var checkingaccounts = await _accountRepository.ReadChecking();
+            ViewBag.CheckingAccountCount = checkingaccounts.Select(ch => ch).Count<CheckingAccounts>();
+            var savingaccounts = await _accountRepository.ReadSaving();
+            ViewBag.SavingAccountCount = savingaccounts.Select(ch => ch).Count<SavingAccounts>();
+            List<Accounts> accounts = await _accountRepository.GetAccounts();
+            return View(accounts);
         }
     }
 }

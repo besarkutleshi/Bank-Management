@@ -1,0 +1,65 @@
+﻿@model CheckingAccounts 
+@{ 
+    ViewBag.Title = "Insert Checking Account";
+}
+
+    <div class="container-fluid">
+        <form action="InsertCheckingAccount" method="post" id="accountform">
+            <fieldset>
+                <legend>Data</legend>
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label for="Client">Client</label>
+                        <select id="Client" class="form-control" asp-for="Account.ClientId">
+                            <option value="-1">Choose</option>
+                            @foreach (var item in ViewBag.Clients)
+                            {
+                                <option value="@item.PersonId">@item.Person.Name @item.Person.Surname</option>
+                            }
+                        </select>
+                        <span asp-validation-for="Account.ClientId" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="cardnumber">Card Number</label>
+                        <input type="text" id="cardnumber" class="form-control" asp-for="Account.CardNumber" required autofocus />
+                        <span asp-validation-for="Account.CardNumber" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="accountnumber">Account Number</label>
+                        <input type="text" id="accountnumber" class="form-control" asp-for="Account.AccountNumber" required autofocus />
+                        <span asp-validation-for="Account.AccountNumber" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" asp-for="Account.Password" required />
+                        <span asp-validation-for="Account.Password" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="balance">Balance</label>
+                        <input type="text" id="balance" class="form-control" asp-for="Account.Balance" required />
+                        <span asp-validation-for="Account.Balance" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="activ">Activ</label>
+                        <select id="activ" class="form-control" asp-for="Account.Activ" required>
+                            <option value="">Choose</option>
+                            <option value="@true">Yes</option>
+                            <option value="@false">No</option>
+                        </select>
+                        <span asp-validation-for="Account.Activ" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="interes">Interes</label>
+                        <input type="text" id="interes" class="form-control" asp-for="Interes" required />
+                        <span asp-validation-for="Interes" class="text-danger"></span>
+                    </div>
+                </div>
+                <br /><br />
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-primary" style="width:100%">Create Account</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>

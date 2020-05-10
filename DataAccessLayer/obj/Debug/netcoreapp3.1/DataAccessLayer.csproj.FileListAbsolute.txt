@@ -1,4 +1,6 @@
 C:\Users\Admin\Desktop\WebProjekti\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.deps.json
+C:\Users\Admin\Desktop\WebProjekti\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.runtimeconfig.json
+C:\Users\Admin\Desktop\WebProjekti\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.runtimeconfig.dev.json
 C:\Users\Admin\Desktop\WebProjekti\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.dll
 C:\Users\Admin\Desktop\WebProjekti\DataAccessLayer\bin\Debug\netcoreapp3.1\DataAccessLayer.pdb
 C:\Users\Admin\Desktop\WebProjekti\DataAccessLayer\bin\Debug\netcoreapp3.1\EntityLayer.dll
@@ -10,3 +12,4 @@ C:\Users\Admin\Desktop\WebProjekti\DataAccessLayer\obj\Debug\netcoreapp3.1\DataA
 C:\Users\Admin\Desktop\WebProjekti\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.csproj.CopyComplete
 C:\Users\Admin\Desktop\WebProjekti\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.dll
 C:\Users\Admin\Desktop\WebProjekti\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.pdb
+C:\Users\Admin\Desktop\WebProjekti\DataAccessLayer\obj\Debug\netcoreapp3.1\DataAccessLayer.genruntimeconfig.cache

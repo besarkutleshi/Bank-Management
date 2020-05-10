@@ -7,6 +7,7 @@ namespace EntityLayer.Accounts
     {
         public int? AccountId { get; set; }
         public decimal? Interes { get; set; }
+        public decimal MaxTotal { get; set; }
         public virtual Accounts Account { get; set; }
     }
 }

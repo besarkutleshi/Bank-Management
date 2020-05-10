@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using EntityLayer.Departaments;
 using EntityLayer.Entity;
 using DataAccessLayer.Interface;
+using EntityLayer.Personeli;
 
 namespace DataAccessLayer.Persons
 {

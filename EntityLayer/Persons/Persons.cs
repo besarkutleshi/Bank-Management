@@ -11,7 +11,6 @@ namespace EntityLayer.Persons
         {
             Accounts = new HashSet<Accounts.Accounts>();
             Credits = new HashSet<Credits.Credits>();
-            Transactions = new HashSet<Transactions>();
         }
 
         public int Id { get; set; }
@@ -30,6 +29,5 @@ namespace EntityLayer.Persons
 
         public virtual ICollection<Accounts.Accounts> Accounts { get; set; }
         public virtual ICollection<Credits.Credits> Credits { get; set; }
-        public virtual ICollection<Transactions> Transactions { get; set; }
     }
 }

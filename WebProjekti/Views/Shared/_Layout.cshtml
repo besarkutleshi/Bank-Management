@@ -66,10 +66,13 @@
                             <a href="#pageAccounts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Account's</a>
                             <ul class="collapse list-unstyled" id="pageAccounts">
                                 <li>
-                                    <a asp-action="CreateCard" asp-controller="Card">Insert Account</a>
+                                    <a asp-action="InsertSavingAccount" asp-controller="Card">Insert Saving Account</a>
                                 </li>
                                 <li>
-                                    <a asp-action="ListCards" asp-controller="Card">List Account</a>
+                                    <a asp-action="InsertCheckingAccount" asp-controller="Card">Insert Checking Account</a>
+                                </li>
+                                <li>
+                                    <a asp-action="AccountsList" asp-controller="Card">List Account</a>
                                 </li>
                             </ul>
                         </li>
@@ -117,19 +120,27 @@
                             <a asp-action="Login" asp-controller="Account">Home</a>
                         </li>
                         <li>
-                            <a href="#">About</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                        <li>
-                            <a href="#">Services</a>
-                        </li>
-                        <li>
                             <a href="#">My Account's</a>
                         </li>
                         <li>
                             <a href="#">My Credit's</a>
+                        </li>
+                        <li>
+                            <a href="#mytransactions" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">My Transaction's</a>
+                            <ul class="collapse list-unstyled" id="mytransactions">
+                                <li>
+                                    <a href="#">List Transaction</a>
+                                </li>
+                                <li>
+                                    <a href="#">Deposit</a>
+                                </li>
+                                <li>
+                                    <a asp-action="Transfer" asp-controller="Transaction">Transfer</a>
+                                </li>
+                                <li>
+                                    <a href="#">With Drawal</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#">My Payment's</a>

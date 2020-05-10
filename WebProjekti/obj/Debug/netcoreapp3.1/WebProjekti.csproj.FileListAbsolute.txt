@@ -162,6 +162,8 @@ C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\WebProjek
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\WebProjekti.pdb
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\WebProjekti.Views.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\WebProjekti.Views.pdb
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\EntityFramework.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -209,12 +211,14 @@ C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\NLog.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\System.CodeDom.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
@@ -274,6 +278,8 @@ C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\runtimes\
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
@@ -309,6 +315,9 @@ C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ListUsers.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ManageUserClaims.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ManageUserRoles.cshtml.g.cs
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Card\AccountsList.cshtml.g.cs
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Card\InsertCheckingAccount.cshtml.g.cs
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Card\InsertSavingAccount.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Client\InsertClient.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Client\ListClient.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Client\UpdateClient.cshtml.g.cs
@@ -321,6 +330,8 @@ C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Transaction\ConfirmTransaction.cshtml.g.cs
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Transaction\Transfer.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\WebProjekti.RazorTargetAssemblyInfo.cache
@@ -332,4 +343,3 @@ C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\staticweb
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\WebProjekti.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\WebProjekti.pdb
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\WebProjekti.genruntimeconfig.cache
-C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Card\CreateCard.cshtml.g.cs
