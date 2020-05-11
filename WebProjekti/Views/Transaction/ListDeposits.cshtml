@@ -1,0 +1,19 @@
+﻿@model List<Deposit>
+@{ 
+    ViewBag.Title = "Deposits";
+} 
+
+    <div class="container-fluid">
+        @if (Model.Any())
+        {
+
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    No Deposits
+                </div>
+            </div>
+        }
+    </div>

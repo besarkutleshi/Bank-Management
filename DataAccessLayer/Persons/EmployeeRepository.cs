@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using EntityLayer.Departaments;
 using EntityLayer.Entity;
 using DataAccessLayer.Interface;
-using EntityLayer.Personeli;
 
 namespace DataAccessLayer.Persons
 {
@@ -119,6 +118,12 @@ namespace DataAccessLayer.Persons
             {
                 return null;
             }
+        }
+
+        public Employees GetEmailEmployee(string email)
+        {
+            context.Persons.ToList();
+            return context.Employees.FirstOrDefault(p => p.Person.Email == email);
         }
     }
 }

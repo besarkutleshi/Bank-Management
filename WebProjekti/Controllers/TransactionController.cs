@@ -18,36 +18,122 @@ namespace WebProjekti.Controllers
         {
             this._transactionRepository = transactionRepository;
             this._accountRepository = accountRepository;
-            CurrentAccount = _accountRepository.GetAccount((int)AccountController.CurrentClient.PersonId);
+            CurrentAccount = _accountRepository.GetAccount((int)AccountController.CurrentClient.PersonId); 
+            if (CurrentAccount != null)
+            {
+                ViewBag.AccountNumber = CurrentAccount.AccountNumber;
+                ViewBag.CardNumber = CurrentAccount.CardNumber;
+            }
         }
 
         [HttpGet]
         public IActionResult Transfer()
         {
-            if(CurrentAccount != null)
-            {
-                ViewBag.AccountNumber = CurrentAccount.AccountNumber;
-                ViewBag.CardNumber = CurrentAccount.CardNumber;
-            }
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Transfer(Transfer obj)
+        public async Task<IActionResult> MakeTransfer(Transfer obj)
         {
             try
             {
+                obj.ClientID = (int)CurrentAccount.ClientId;
+                obj.ExecutionDate = DateTime.Now;
+                Accounts toAcc = _accountRepository.GetAccount(obj.ToAccountNumber);
+                if(toAcc == null)
+                {
+                    return DisplayError("Not Successful", "This Account Not Exist");
+                }
                 if (await _transactionRepository.Insert(obj) != null)
                 {
                     return RedirectToAction("ConfirmTransaction");
                 }
-                return View("Error");
+                return DisplayError("Not Successful", "Something went wrong");
             }
             catch (Exception ex)
             {
-                ViewBag.ErrorMessage = ex.Message;
-                return View("Error");
+                return DisplayError("Not Successful", ex.Message);
             }
         }
+
+        [HttpGet]
+        public IActionResult ConfirmTransaction()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Deposit()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> MakeDeposit(Deposit obj)
+        {
+            try
+            {
+                GetAtributes(obj);
+                Accounts acc = _accountRepository.GetAccount(obj.AccountNumber);
+                if (acc == null)
+                {
+                    return DisplayError("Not Successful", "This Account Not Exist");
+                }
+                if (await _transactionRepository.Insert(obj) != null)
+                {
+                    return RedirectToAction("ConfirmTransaction");
+                }
+                return DisplayError("Not Successful", "Something went wrong");
+            }
+            catch (Exception ex)
+            {
+                return DisplayError("Not Successful", ex.Message);
+            }
+        }
+
+        private IActionResult DisplayError(string title ,string message)
+        {
+            ViewBag.ErrorTitle = title;
+            ViewBag.ErrorMessage = message;
+            return View("Error");
+        }
+
+        private void GetAtributes(Transaction obj)
+        {
+            obj.ClientID = (int)AccountController.CurrentClient.PersonId;
+            obj.ExecutionDate = DateTime.Now;
+        }
+
+        [HttpGet]
+        public IActionResult WithDrawal()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> MakeWithDrawal(WithDrawal obj)
+        {
+            try
+            {
+                GetAtributes(obj);
+                Accounts acc = _accountRepository.GetAccount(obj.AccountNumber);
+                if (acc == null)
+                {
+                    return DisplayError("Not Successful", "This Account Not Exist");
+                }
+                if (await _transactionRepository.Insert(obj) != null)
+                {
+                    return RedirectToAction("ConfirmTransaction");
+                }
+                return DisplayError("Not Successful", "Something went wrong");
+            }
+            catch (Exception ex)
+            {
+                return DisplayError("Not Successful", ex.Message);
+            }
+        }
+
+        public IActionResult ListTransaction()
+        {
+            return View();
+        } 
     }
 }

@@ -21,12 +21,14 @@ namespace WebProjekti.Controllers
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly ClientRepository _clientRepository;
+        private readonly EmployeeRepository _employeeRepository;
         private readonly ILogger<AccountController> logger;
         public static Clients CurrentClient = null;
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ILogger<AccountController> logger,
-            IConfiguration configuration,ClientRepository clientRepository)
+            IConfiguration configuration,ClientRepository clientRepository,EmployeeRepository employee)
         {
+            this._employeeRepository = employee;
             this._clientRepository = clientRepository;
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -63,7 +65,29 @@ namespace WebProjekti.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                Clients client = _clientRepository.GetClientEmail(model.Email);
+                Employees employees = null;
+                if(client == null)
+                {
+                    employees = _employeeRepository.GetEmailEmployee(model.Email);
+                }
+
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
+
+                if(client == null && employees == null)
+                {
+                    ViewBag.ErrorTitle = "Not Successful";
+                    ViewBag.ErrorMessage = "This email not exist to our clients";
+                    return View("Error");
+                }
+                if(client == null)
+                {
+                    user.ClientID = (int)employees.PersonId;
+                }
+                else
+                {
+                    user.ClientID = (int)client.PersonId;
+                }
 
                 var result = await userManager.CreateAsync(user, model.Password);
 
@@ -166,13 +190,21 @@ namespace WebProjekti.Controllers
                 return View("Login", loginView);
             }
 
-
+            Clients client = null;
+            Employees employees = null;
             var email = info.Principal.FindFirstValue(ClaimTypes.Email);
             ApplicationUser user = null;
-
             if (email != null)
             {
                 user = await userManager.FindByEmailAsync(email);
+                client = _clientRepository.GetClientEmail(email);
+                employees = _employeeRepository.GetEmailEmployee(email);
+                if(client == null && employees == null)
+                {
+                    ViewBag.ErrorTitle = "Not Successful";
+                    ViewBag.ErrorMessage = "This email not exist to our clients";
+                    return View("Error");
+                }
                 if (user != null && !user.EmailConfirmed)
                 {
                     ModelState.AddModelError("", "Email not confirmed yet");
@@ -184,7 +216,6 @@ namespace WebProjekti.Controllers
 
             if (signiInResult.Succeeded)
             {
-
                 return LocalRedirect(returnUrl);
             }
             else
@@ -198,6 +229,10 @@ namespace WebProjekti.Controllers
                             UserName = info.Principal.FindFirstValue(ClaimTypes.Email),
                             Email = info.Principal.FindFirstValue(ClaimTypes.Email)
                         };
+                        if (employees == null)
+                            user.ClientID = (int)client.PersonId;
+                        else
+                            user.ClientID = (int)employees.PersonId;
                         await userManager.CreateAsync(user);
 
                         var token = await userManager.GenerateEmailConfirmationTokenAsync(user);

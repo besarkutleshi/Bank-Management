@@ -8,7 +8,6 @@ using DataAccessLayer;
 using EntityLayer.Persons;
 using Microsoft.AspNetCore.Authorization;
 using DataAccessLayer.Departaments;
-using EntityLayer.Personeli;
 
 namespace WebProjekti.Controllers
 {

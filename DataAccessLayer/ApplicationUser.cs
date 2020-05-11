@@ -1,4 +1,4 @@
-﻿using EntityLayer.Personeli;
+﻿using EntityLayer.Persons;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -9,6 +9,6 @@ namespace DataAccessLayer
     public class ApplicationUser:IdentityUser
     {
         public int ClientID { get; set; }
-        public virtual Client Client { get; set; }
+        public virtual Clients Client { get; set; }
     }
 }

@@ -343,3 +343,5 @@ C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\staticweb
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\WebProjekti.dll
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\WebProjekti.pdb
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\WebProjekti.genruntimeconfig.cache
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Transaction\Deposit.cshtml.g.cs
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Transaction\WithDrawal.cshtml.g.cs

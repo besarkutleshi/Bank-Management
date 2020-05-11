@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Cards
 {
-    public class TransactionRepository : IInsert<Deposit>,IInsert<Transfer>,IInsert<WithDrawal>
+    public class TransactionRepository : IInsert<Deposit>,IInsert<Transfer>,IInsert<WithDrawal>,IGetObject<Deposit>
     {
         public async Task<ActionResult<Deposit>> Insert(Deposit obj)
         {
@@ -27,7 +27,7 @@ namespace DataAccessLayer.Cards
 					cmd.Parameters.AddWithValue("@Description", obj.Description);
 					cmd.Parameters.AddWithValue("@CardNumber", obj.CardNumber);
 					cmd.Parameters.AddWithValue("@AccountNumber", obj.AccountNumber);
-					cmd.Parameters.AddWithValue("@Amountr", obj.Amount);
+					cmd.Parameters.AddWithValue("@Amount", obj.Amount);
 					value = await DataConnection.GetValue(cmd); 
 				}
 				return await DataConnection.Result(value, obj);
@@ -53,7 +53,7 @@ namespace DataAccessLayer.Cards
 					cmd.Parameters.AddWithValue("@CardNumber", obj.CardNumber);
 					cmd.Parameters.AddWithValue("@AccountNumber", obj.AccountNumber);
 					cmd.Parameters.AddWithValue("@ToAccountNumber", obj.ToAccountNumber);
-					cmd.Parameters.AddWithValue("@Amountr", obj.Amount);
+					cmd.Parameters.AddWithValue("@Amount", obj.Amount);
 					value = await DataConnection.GetValue(cmd);
 				}
 				return await DataConnection.Result(value, obj);
@@ -78,7 +78,7 @@ namespace DataAccessLayer.Cards
 					cmd.Parameters.AddWithValue("@Description", obj.Description);
 					cmd.Parameters.AddWithValue("@CardNumber", obj.CardNumber);
 					cmd.Parameters.AddWithValue("@AccountNumber", obj.AccountNumber);
-					cmd.Parameters.AddWithValue("@Amountr", obj.Amount);
+					cmd.Parameters.AddWithValue("@Amount", obj.Amount);
 					value = await DataConnection.GetValue(cmd);
 				}
 				return await DataConnection.Result(value, obj);
@@ -87,6 +87,40 @@ namespace DataAccessLayer.Cards
 			{
 				throw;
 			}
+		}
+
+		public async Task<List<Deposit>> GetDeposits(int id)
+		{
+			try
+			{
+				List<Deposit> deposits = null;
+				using(var con = await DataConnection.Connection())
+				{
+					var cmd = DataConnection.Command(con, "sp_ListTransaction_Deposit", CommandType.StoredProcedure);
+					cmd.Parameters.AddWithValue("@ClientID", id);
+					SqlDataReader sdr = await cmd.ExecuteReaderAsync();
+					if (sdr.HasRows)
+					{
+						deposits = new List<Deposit>();
+						while (await sdr.ReadAsync())
+						{
+							deposits.Add(GetObject(sdr));
+						}
+					}
+				}
+				return deposits;
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+		}
+
+		public Deposit GetObject(SqlDataReader sdr)
+		{
+			return new Deposit(sdr["FullName"].ToString(), sdr["ClientName"].ToString(), Convert.ToDateTime(sdr["ExecutionDate"]), sdr["CardNumber"].ToString(),
+				sdr["AccountNumber"].ToString(), sdr["Description"].ToString(), double.Parse(sdr["Amount"].ToString()));
 		}
 	}
 }

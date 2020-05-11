@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EntityLayer.Persons;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -21,5 +22,7 @@ namespace WebProjekti.Models.Account
         [Display(Name ="Confirm password")]
         [Compare("Password",ErrorMessage ="Password and confirmation password do not match")]
         public string ConfirmPassword { get; set; }
+        public int ClientID { get; set; }
+        public virtual Clients Client { get; set; }
     }
 }

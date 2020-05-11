@@ -187,5 +187,10 @@ namespace DataAccessLayer.Cards
             _context.Clients.FirstOrDefault(p => p.PersonId == id);
             return _context.Accounts.FirstOrDefault(acc => acc.ClientId == id);
         }
+
+        public Accounts GetAccount(string accountnumber)
+        {
+            return _context.Accounts.FirstOrDefault(acc => acc.AccountNumber == accountnumber);
+        }
     }
 }

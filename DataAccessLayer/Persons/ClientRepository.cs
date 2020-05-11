@@ -122,5 +122,11 @@ namespace DataAccessLayer.Persons
             await _context.Persons.ToListAsync();
             return await _context.Clients.FirstOrDefaultAsync(cl => cl.PersonId == id);
         }
+
+        public Clients GetClientEmail(string email)
+        {
+            _context.Persons.ToList();
+            return _context.Clients.FirstOrDefault(cl => cl.Person.Email == email);
+        }
     }
 }
