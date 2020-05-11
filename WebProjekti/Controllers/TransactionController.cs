@@ -172,6 +172,9 @@ namespace WebProjekti.Controllers
             ViewBag.DataDeposits = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.PersonId, "sp_GetDepositsForMonth"));
             ViewBag.DataTransfers = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.PersonId, "sp_GetTransfersForMonth"));
             ViewBag.DataDrawals = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.PersonId, "sp_GetDrawalsForMonth"));
+            ViewBag.LastDeposits = await _accountReports.GetDeposits((int)AccountController.CurrentClient.PersonId);
+            ViewBag.LastTransfers = await _accountReports.GetTransfers((int)AccountController.CurrentClient.PersonId);
+            ViewBag.LastDrawals = await _accountReports.GetWithDrawals((int)AccountController.CurrentClient.PersonId);
             return View();
         }
 

@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Reports;
+using EntityLayer.Transactions;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -42,5 +43,96 @@ namespace DataAccessLayer.Reports
 				throw;
 			}
         }
-    }
+
+		public async Task<List<Deposit>> GetDeposits(int clientid)
+		{
+			try
+			{
+				List<Deposit> deposits = null;
+				using (var con = await DataConnection.Connection())
+				{
+					var cmd = DataConnection.Command(con, "sp_GetLastDeposits", CommandType.StoredProcedure);
+					cmd.Parameters.AddWithValue("@ClientID", clientid);
+					SqlDataReader sdr = await cmd.ExecuteReaderAsync();
+					if (sdr.HasRows)
+					{
+						deposits = new List<Deposit>();
+						while (await sdr.ReadAsync())
+						{
+							Deposit obj = new Deposit();
+							obj.Amount = double.Parse(sdr["Amount"].ToString());
+							obj.Description = sdr["Description"].ToString();
+							deposits.Add(obj);
+						}
+					}
+				}
+				return deposits;
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
+
+		public async Task<List<Transfer>> GetTransfers(int clientid)
+		{
+			try
+			{
+				List<Transfer> transfers = null;
+				using (var con = await DataConnection.Connection())
+				{
+					var cmd = DataConnection.Command(con, "sp_GetLastTransfers", CommandType.StoredProcedure);
+					cmd.Parameters.AddWithValue("@ClientID", clientid);
+					SqlDataReader sdr = await cmd.ExecuteReaderAsync();
+					if (sdr.HasRows)
+					{
+						transfers = new List<Transfer>();
+						while (await sdr.ReadAsync())
+						{
+							Transfer obj = new Transfer();
+							obj.Amount = double.Parse(sdr["Amount"].ToString());
+							obj.Description = sdr["Description"].ToString();
+							transfers.Add(obj);
+						}
+					}
+				}
+				return transfers;
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
+
+		public async Task<List<WithDrawal>> GetWithDrawals(int clientid)
+		{
+			try
+			{
+				List<WithDrawal> withDrawals = null;
+				using (var con = await DataConnection.Connection())
+				{
+					var cmd = DataConnection.Command(con, "sp_GetLastWithDrawals", CommandType.StoredProcedure);
+					cmd.Parameters.AddWithValue("@ClientID", clientid);
+					SqlDataReader sdr = await cmd.ExecuteReaderAsync();
+					if (sdr.HasRows)
+					{
+						withDrawals = new List<WithDrawal>();
+						while (await sdr.ReadAsync())
+						{
+							WithDrawal obj = new WithDrawal();
+							obj.Amount = double.Parse(sdr["Amount"].ToString());
+							obj.Description = sdr["Description"].ToString();
+							obj.ExecutionDate = Convert.ToDateTime(sdr["ExecutionDate"]);
+							withDrawals.Add(obj);
+						}
+					}
+				}
+				return withDrawals;
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
+	}
 }

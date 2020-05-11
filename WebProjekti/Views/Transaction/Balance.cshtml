@@ -6,13 +6,87 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-4">
-            <br />
             <div class="row">
                 <div class="col-sm-12">
-                    <h3 class="text-center">My Balance</h3>
+                    <h5 class="text-center">My Balance</h5>
                     <h4 style="color:Highlight">$@ViewBag.Balance</h4>
                 </div>
+                <div class="col-sm-12">
+                    <h5 class="text-center">Last Deposits</h5>
+                    @foreach (var item in ViewBag.LastDeposits)
+                    {
+                        if (ViewBag.LastDeposits != null)
+                        {
+                            <div class="card" style="border-radius:20%">
+                                <div class="card-body">
+                                    <h6 class="float-left">@item.Description</h6>
+                                    <h6 class="float-right">$@item.Amount</h6>
+                                </div>
+                            </div>
+                            <br />
+                        }
+                        else
+                        {
+                            <div class="card" style="border-radius:20%">
+                                <div class="card-body">
+                                    <h6>No Transfers</h6>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
                 <br />
+                <br />
+                <div class="col-sm-12" >
+                    <h5 class="text-center">Last Transfers</h5>
+                    @foreach (var item in ViewBag.LastTransfers)
+                    {
+                        if (ViewBag.LastTransfers != null)
+                        {
+                            <div class="card" style="border-radius:20%">
+                                <div class="card-body">
+                                    <h6 class="float-left">@item.Description</h6>
+                                    <h6 class="float-right">$@item.Amount</h6>
+                                </div>
+                            </div>
+                            <br />
+                        }
+                        else
+                        {
+                            <div class="card" style="border-radius:20%">
+                                <div class="card-body">
+                                    <h6>No Transfers</h6>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+                <br />
+                <br />
+                <div class="col-sm-12">
+                    <h5 class="text-center">Last With Drawals</h5>
+                    @foreach (var item in ViewBag.LastDrawals)
+                    {
+                        if (ViewBag.LastDrawals != null)
+                        {
+                            <div class="card" style="border-radius:20%">
+                                <div class="card-body">
+                                    <h6 class="float-left">@item.Description</h6>
+                                    <h6 class="float-right">$@item.Amount</h6>
+                                </div>
+                            </div>
+                            <br />
+                        }
+                        else
+                        {
+                            <div class="card" style="border-radius:20%">
+                                <div class="card-body">
+                                    <h6>No With Drawals</h6>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
             </div>
         </div>
         <div class="col-sm-8">

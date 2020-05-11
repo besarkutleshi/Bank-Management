@@ -11,7 +11,10 @@ namespace EntityLayer.Transactions
         public string CardNumber { get; set; }
         public double Amount { get; set; }
         public string ToAccountNumber { get; set; }
+        public Transfer()
+        {
 
+        }
         public Transfer(string fullname, string name, DateTime date, string cardnumber, string accountnumber,
             string toaccount, string description, double amount)
         {
