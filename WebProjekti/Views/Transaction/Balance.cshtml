@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "My Balance";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            <br />
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="text-center">My Balance</h3>
+                    <h4 style="color:Highlight">$@ViewBag.Balance</h4>
+                </div>
+                <br />
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div id="chartContainerDeposits" style="height: 300px; width: 100%;">
+
+            </div>
+            <br />
+            <br />
+            <div id="chartContainerTransfer" style="height: 300px; width: 100%;">
+                chartContainerDrawals
+            </div>
+            <br />
+            <br />
+            <div id="chartContainerDrawals" style="height: 300px; width: 100%;">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+        window.onload = function () {
+
+        var chartDeposit = new CanvasJS.Chart("chartContainerDeposits", {
+        animationEnabled: true,
+        theme: "light2", // "light1", "light2", "dark1", "dark2"
+        title: {
+        text: "Deposit values for months"
+        },
+        data: [{
+        type: "column",
+        dataPoints: @Html.Raw(ViewBag.DataDeposits)
+        }]
+        });
+        chartDeposit.render();
+            var chartTransfer = new CanvasJS.Chart("chartContainerTransfer", {
+        animationEnabled: true,
+        theme: "light2", // "light1", "light2", "dark1", "dark2"
+        title: {
+        text: "Transfer values for months"
+        },
+        data: [{
+        type: "column",
+        dataPoints: @Html.Raw(ViewBag.DataTransfers)
+        }]
+        });
+            chartTransfer.render();
+        var chartDrawals = new CanvasJS.Chart("chartContainerDrawals", {
+        animationEnabled: true,
+        theme: "light2", // "light1", "light2", "dark1", "dark2"
+        title: {
+        text: "With Drawal values for months"
+        },
+        data: [{
+        type: "column",
+        dataPoints: @Html.Raw(ViewBag.DataDrawals)
+        }]
+        });
+            chartDrawals.render();
+
+
+        }
+    </script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+}

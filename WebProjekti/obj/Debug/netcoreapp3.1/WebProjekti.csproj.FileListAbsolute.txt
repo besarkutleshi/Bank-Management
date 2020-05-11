@@ -348,3 +348,4 @@ C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Transaction\ListDeposits.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Transaction\ListTransfers.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Transaction\ListDrawals.cshtml.g.cs
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Transaction\Balance.cshtml.g.cs

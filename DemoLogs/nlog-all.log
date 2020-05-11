@@ -159,3 +159,97 @@ Error Number:547,State:0,Class:16
 2020-05-11 16:44:50.7762|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
 2020-05-11 16:44:50.7902|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
 2020-05-11 16:49:30.8589|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 16:54:44.8725|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 16:54:44.9904|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 16:54:44.9904|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 16:55:10.2139|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 16:59:54.3438|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 16:59:54.4704|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 16:59:54.4882|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 17:00:09.0218|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 17:01:22.4192|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 17:01:22.5549|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 17:01:22.5756|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 17:01:31.8983|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 21:28:16.7227|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 21:28:16.7750|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 21:28:16.7750|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 21:28:22.2437|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 21:32:21.0157|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 21:32:21.0746|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 21:32:21.0839|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 21:32:28.5042|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 21:37:14.5378|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 21:37:14.6042|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 21:37:14.6118|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 21:37:23.9013|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 21:39:13.8064|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 21:39:13.8616|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 21:39:13.8616|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 21:39:33.8294|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 21:41:00.4298|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 21:41:00.4939|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 21:41:00.4939|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:20:24.9274|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:20:24.9876|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:20:24.9876|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:20:39.2934|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 22:21:45.7933|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:21:45.8528|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:21:45.8528|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:21:50.8238|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 22:22:24.7131|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2020-05-11 22:23:04.7320|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:23:04.8192|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:23:04.8311|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:23:17.9403|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 22:25:33.3193|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:25:33.4140|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:25:33.4273|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:25:59.4094|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:25:59.4888|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:25:59.4888|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:26:06.4548|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 22:28:43.4571|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:28:43.5208|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:28:43.5208|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:28:48.8084|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 22:31:38.7850|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:31:38.8596|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:31:38.8709|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:32:01.7190|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:32:01.7769|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:32:01.7852|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:32:07.2686|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 22:33:39.1560|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:33:39.2053|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:33:39.2134|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:33:44.6853|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 22:35:11.5632|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:35:11.6265|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:35:11.6349|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:35:27.7310|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 22:38:57.0975|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:38:57.1566|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:38:57.1653|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:39:04.5748|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 22:41:46.0170|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:41:46.0848|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:41:46.0848|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:41:54.7272|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 22:51:37.8466|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:51:37.9113|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:51:37.9113|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:51:46.0184|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 22:53:43.9182|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:53:43.9777|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:53:43.9777|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:53:58.7294|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 22:55:37.1538|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:55:37.2127|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:55:37.2127|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:55:45.2006|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-11 22:58:13.4348|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-11 22:58:13.5034|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-11 22:58:13.5034|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-11 22:58:20.2410|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DataAccessLayer.Cards;
+using DataAccessLayer.Reports;
 using EntityLayer.Accounts;
 using EntityLayer.Transactions;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace WebProjekti.Controllers
 {
@@ -13,11 +15,13 @@ namespace WebProjekti.Controllers
     {
         private readonly TransactionRepository _transactionRepository;
         private readonly AccountRepository _accountRepository;
+        private readonly AccountReports _accountReports;
         private static Accounts CurrentAccount;
-        public TransactionController(TransactionRepository transactionRepository, AccountRepository accountRepository)
+        public TransactionController(TransactionRepository transactionRepository, AccountRepository accountRepository, AccountReports accountReports)
         {
             this._transactionRepository = transactionRepository;
             this._accountRepository = accountRepository;
+            this._accountReports = accountReports;
             CurrentAccount = _accountRepository.GetAccount((int)AccountController.CurrentClient.PersonId); 
             if (CurrentAccount != null)
             {
@@ -159,6 +163,16 @@ namespace WebProjekti.Controllers
             ViewBag.TransferCount = (await _transactionRepository.GetTransfers((int)AccountController.CurrentClient.PersonId)).Count;
             ViewBag.DepositsCount = (await _transactionRepository.GetDeposits((int)AccountController.CurrentClient.PersonId)).Count;
             return View(drawals);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Balance()
+        {
+            ViewBag.Balance = _accountRepository.GetBalance((int)AccountController.CurrentClient.PersonId);
+            ViewBag.DataDeposits = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.PersonId, "sp_GetDepositsForMonth"));
+            ViewBag.DataTransfers = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.PersonId, "sp_GetTransfersForMonth"));
+            ViewBag.DataDrawals = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.PersonId, "sp_GetDrawalsForMonth"));
+            return View();
         }
 
     }

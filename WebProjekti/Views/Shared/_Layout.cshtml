@@ -154,7 +154,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">My Payment's</a>
+                            <a asp-action="Balance" asp-controller="Transaction">My Balance</a>
                         </li>
                         <li>
                             <a href="#">E-Banking</a>
@@ -258,7 +258,7 @@
                     </div>
                 </div>
             </nav>
-            <div class="container">
+            <div class="">
                 <main role="main" class="pb-3">
                     @RenderBody()
                 </main>
@@ -276,6 +276,8 @@
     <script src="~/js/dataTables.bootstrap4.js"></script>
     <script src="~/js/datatables-demo.js"></script>
     <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.easing.min.js"></script>
+    <script src="~/js/sb-admin-2.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

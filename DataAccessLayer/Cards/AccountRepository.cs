@@ -192,5 +192,11 @@ namespace DataAccessLayer.Cards
         {
             return _context.Accounts.FirstOrDefault(acc => acc.AccountNumber == accountnumber);
         }
+
+        public decimal GetBalance(int clientid)
+        {
+            Accounts acc = _context.Accounts.FirstOrDefault(acc => acc.ClientId == clientid);
+            return (decimal)acc.Balance;
+        }
     }
 }
