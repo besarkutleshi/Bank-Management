@@ -6,7 +6,89 @@
     <div class="container-fluid">
         @if (Model.Any())
         {
-
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Deposits
+                        </div>
+                        <div class="card-body" style="font-size:20px">
+                            Count : @ViewBag.DepositsCount
+                        </div>
+                        <div class="card-footer">
+                            <a asp-action="InsertClient" asp-controller="Client" class="btn btn-primary">Insert Client</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Transfer
+                        </div>
+                        <div class="card-body" style="font-size:20px">
+                            Count :  @ViewBag.IsPremiumCount
+                        </div>
+                        <div class="card-footer">
+                            <a asp-action="InsertClient" asp-controller="Client" class="btn btn-primary">Insert Client</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-header">
+                            With Drawal
+                        </div>
+                        <div class="card-body" style="font-size:20px">
+                            Count : @ViewBag.IsNotPremiumCount
+                        </div>
+                        <div class="card-footer">
+                            <a asp-action="InsertClient" asp-controller="Client" class="btn btn-primary">Insert Client</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-center">Client List</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive text-nowrap">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Full Name</th>
+                                            <th>Name</th>
+                                            <th>Card Number</th>
+                                            <th>Account Number</th>
+                                            <th>Amount</th>
+                                            <th>Date</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.FullName</td>
+                                                <td>@item.Client.Name</td>
+                                                <td>@item.CardNumber</td>
+                                                <td>@item.AccountNumber</td>
+                                                <td>@item.Amount</td>
+                                                <td>@item.ExecutionDate</td>
+                                                <td>@item.Description</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         }
         else
         {

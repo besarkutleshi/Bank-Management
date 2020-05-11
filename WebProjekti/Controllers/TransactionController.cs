@@ -131,9 +131,13 @@ namespace WebProjekti.Controllers
             }
         }
 
-        public IActionResult ListTransaction()
+        public async Task<IActionResult> ListDeposits()
         {
-            return View();
+            List<Deposit> deposits = await _transactionRepository.GetDeposits((int)AccountController.CurrentClient.PersonId);
+            ViewBag.DepositsCount = deposits.Count;
+            ViewBag.TransferCount = (await _transactionRepository.GetTransfers((int)AccountController.CurrentClient.PersonId)).Count;
+            ViewBag.DrawalsCount = (await _transactionRepository.GetWithDrawals((int)AccountController.CurrentClient.PersonId)).Count;
+            return View(deposits);
         } 
     }
 }

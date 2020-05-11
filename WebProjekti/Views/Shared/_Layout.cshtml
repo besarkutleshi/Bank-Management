@@ -129,7 +129,18 @@
                             <a href="#mytransactions" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">My Transaction's</a>
                             <ul class="collapse list-unstyled" id="mytransactions">
                                 <li>
-                                    <a href="#">List Transaction</a>
+                                    <a href="#listtransaction" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Transaction</a>
+                                    <ul class="collapse list-unstyled" id="listtransaction">
+                                        <li>
+                                            <a asp-action="ListDeposits" asp-controller="Transaction">Deposits</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Transfers</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">With Drawals</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a asp-action="Deposit" asp-controller="Transaction">Deposit</a>
