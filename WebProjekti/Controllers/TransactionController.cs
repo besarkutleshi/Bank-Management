@@ -145,7 +145,7 @@ namespace WebProjekti.Controllers
         public async Task<IActionResult> ListTransfers()
         {
             List<Transfer> transfers = await _transactionRepository.GetTransfers((int)AccountController.CurrentClient.PersonId);
-            ViewBag.TransfersCount = transfers.Count;
+            ViewBag.TransferCount = transfers.Count;
             ViewBag.DrawalsCount = (await _transactionRepository.GetWithDrawals((int)AccountController.CurrentClient.PersonId)).Count;
             ViewBag.DepositsCount = (await _transactionRepository.GetDeposits((int)AccountController.CurrentClient.PersonId)).Count;
             return View(transfers);
@@ -155,7 +155,7 @@ namespace WebProjekti.Controllers
         public async Task<IActionResult> ListDrawals()
         {
             List<WithDrawal> drawals = await _transactionRepository.GetWithDrawals((int)AccountController.CurrentClient.PersonId);
-            ViewBag.Drawals = drawals.Count;
+            ViewBag.DrawalsCount = drawals.Count;
             ViewBag.TransferCount = (await _transactionRepository.GetTransfers((int)AccountController.CurrentClient.PersonId)).Count;
             ViewBag.DepositsCount = (await _transactionRepository.GetDeposits((int)AccountController.CurrentClient.PersonId)).Count;
             return View(drawals);

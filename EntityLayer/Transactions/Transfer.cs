@@ -21,7 +21,7 @@ namespace EntityLayer.Transactions
             ExecutionDate = date;
             CardNumber = cardnumber;
             AccountNumber = accountnumber;
-            AccountNumber = accountnumber;
+            ToAccountNumber = toaccount;
             Description = description;
             Amount = amount;
         }
