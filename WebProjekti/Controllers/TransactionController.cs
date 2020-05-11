@@ -131,6 +131,7 @@ namespace WebProjekti.Controllers
             }
         }
 
+        [HttpGet]
         public async Task<IActionResult> ListDeposits()
         {
             List<Deposit> deposits = await _transactionRepository.GetDeposits((int)AccountController.CurrentClient.PersonId);
@@ -139,5 +140,26 @@ namespace WebProjekti.Controllers
             ViewBag.DrawalsCount = (await _transactionRepository.GetWithDrawals((int)AccountController.CurrentClient.PersonId)).Count;
             return View(deposits);
         } 
+
+        [HttpGet]
+        public async Task<IActionResult> ListTransfers()
+        {
+            List<Transfer> transfers = await _transactionRepository.GetTransfers((int)AccountController.CurrentClient.PersonId);
+            ViewBag.TransfersCount = transfers.Count;
+            ViewBag.DrawalsCount = (await _transactionRepository.GetWithDrawals((int)AccountController.CurrentClient.PersonId)).Count;
+            ViewBag.DepositsCount = (await _transactionRepository.GetDeposits((int)AccountController.CurrentClient.PersonId)).Count;
+            return View(transfers);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ListDrawals()
+        {
+            List<WithDrawal> drawals = await _transactionRepository.GetWithDrawals((int)AccountController.CurrentClient.PersonId);
+            ViewBag.Drawals = drawals.Count;
+            ViewBag.TransferCount = (await _transactionRepository.GetTransfers((int)AccountController.CurrentClient.PersonId)).Count;
+            ViewBag.DepositsCount = (await _transactionRepository.GetDeposits((int)AccountController.CurrentClient.PersonId)).Count;
+            return View(drawals);
+        }
+
     }
 }

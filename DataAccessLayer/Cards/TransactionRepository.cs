@@ -170,7 +170,7 @@ namespace DataAccessLayer.Cards
 			}
 		}
 
-		private Deposit GetObject(SqlDataReader sdr)
+		public Deposit GetObject(SqlDataReader sdr)
 		{
 			return new Deposit(sdr["FullName"].ToString(), sdr["ClientName"].ToString(), Convert.ToDateTime(sdr["ExecutionDate"]), sdr["CardNumber"].ToString(),
 				sdr["AccountNumber"].ToString(), sdr["Description"].ToString(), double.Parse(sdr["Amount"].ToString()));

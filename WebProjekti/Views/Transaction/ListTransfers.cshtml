@@ -1,6 +1,6 @@
-﻿@model List<Deposit>
-@{ 
-    ViewBag.Title = "Deposits";
+﻿@model List<Transfer>
+@{
+    ViewBag.Title = "Transfers";
 } 
 
     <div class="container-fluid">
@@ -64,6 +64,7 @@
                                             <th>Name</th>
                                             <th>Card Number</th>
                                             <th>Account Number</th>
+                                            <th>To Account Number</th>
                                             <th>Amount</th>
                                             <th>Date</th>
                                             <th>Description</th>
@@ -77,6 +78,7 @@
                                                 <td>@item.Client.Name</td>
                                                 <td>@item.CardNumber</td>
                                                 <td>@item.AccountNumber</td>
+                                                <td>@item.ToAccountNumber</td>
                                                 <td>@item.Amount</td>
                                                 <td>@item.ExecutionDate</td>
                                                 <td>@item.Description</td>
