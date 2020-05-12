@@ -67,5 +67,34 @@ namespace WebProjekti.Controllers
             List<Accounts> accounts = await _accountRepository.GetAccounts();
             return View(accounts);
         }
+
+
+        [HttpGet]
+        public async Task<IActionResult> MyCheckingAccounts(string email)
+        {
+            List<CheckingAccounts> checkingAccounts = await _accountRepository.ReadChecking(email);
+            return View(checkingAccounts);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> MySavingAccounts(string email)
+        {
+            List<SavingAccounts> savingAccounts = await _accountRepository.ReadSaving(email);
+            return View(savingAccounts);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> CheckingAccountDetails(string id)
+        {
+            CheckingAccounts obj = await _accountRepository.CheckingAccountsDetails(id);
+            return View(obj);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> SavingAccountDetails(string id)
+        {
+            SavingAccounts obj = await _accountRepository.SavingAccountsDetails(id);
+            return View(obj);
+        }
     }
 }

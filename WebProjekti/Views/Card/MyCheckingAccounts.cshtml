@@ -1,0 +1,40 @@
+﻿@model List<CheckingAccounts>
+@{ 
+    ViewBag.Title = "My Accounts";
+}
+
+    <div class="container">
+        @if (Model == null)
+        {
+            <div class="col-sm-12">
+                <h5 class="text-center">No Checking Account</h5>
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="text-center">My Saving Account's</h5>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Card Number :  @item.Account.CardNumber
+                            </div>
+                            <div class="card-body">
+                                Account Number :  @item.Account.AccountNumber
+                            </div>
+                            <div class="card-footer">
+                                <a asp-action="CheckingAccountDetails" asp-controller="Card" asp-route-id="@item.Account.AccountNumber" class="btn btn-primary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>

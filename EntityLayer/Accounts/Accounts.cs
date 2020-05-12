@@ -5,6 +5,10 @@ namespace EntityLayer.Accounts
 {
     public partial class Accounts
     {
+        public Accounts()
+        {
+            Client = new Persons.Persons();
+        }
         public int Id { get; set; }
         public int? ClientId { get; set; }
         public decimal? Balance { get; set; }

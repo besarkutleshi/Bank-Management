@@ -72,6 +72,7 @@ namespace WebProjekti.Controllers
             return View();
         }
 
+        [HttpPost]
         public async Task<IActionResult> MakeDeposit(Deposit obj)
         {
             try
@@ -113,6 +114,7 @@ namespace WebProjekti.Controllers
             return View();
         }
 
+        [HttpPost]
         public async Task<IActionResult> MakeWithDrawal(WithDrawal obj)
         {
             try

@@ -5,6 +5,10 @@ namespace EntityLayer.Accounts
 {
     public partial class CheckingAccounts
     {
+        public CheckingAccounts()
+        {
+            Account = new Accounts();
+        }
         public int? AccountId { get; set; }
         public decimal? Interes { get; set; }
 

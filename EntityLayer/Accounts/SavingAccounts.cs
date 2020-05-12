@@ -5,6 +5,10 @@ namespace EntityLayer.Accounts
 {
     public partial class SavingAccounts
     {
+        public SavingAccounts()
+        {
+            Account = new Accounts();
+        }
         public int? AccountId { get; set; }
         public decimal? Interes { get; set; }
         public decimal MaxTotal { get; set; }

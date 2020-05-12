@@ -72,13 +72,31 @@ namespace DataAccessLayer.Cards
             }
         }
 
-        public async Task<SavingAccounts> ReadSaving(int id)
+        public async Task<List<SavingAccounts>> ReadSaving(string email)
         {
             try
             {
-                Accounts acc = await _context.Accounts.FirstOrDefaultAsync(acc => acc.Id == id);
-                SavingAccounts sacc = await _context.SavingAccounts.FirstOrDefaultAsync(acc => acc.Account.Id == id);
-                return sacc;
+                List<SavingAccounts> checkingAccounts = null;
+                using (var con = await DataConnection.Connection())
+                {
+                    var cmd = DataConnection.Command(con, "sp_GetSavingAccount_ByEmail", CommandType.StoredProcedure);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    SqlDataReader sdr = await cmd.ExecuteReaderAsync();
+                    if (sdr.HasRows)
+                    {
+                        checkingAccounts = new List<SavingAccounts>();
+                        while (await sdr.ReadAsync())
+                        {
+                            SavingAccounts obj = new SavingAccounts();
+                            obj.AccountId = int.Parse(sdr["ID"].ToString());
+                            obj.Account.Id = int.Parse(sdr["ID"].ToString());
+                            obj.Account.AccountNumber = sdr["AccountNumber"].ToString();
+                            obj.Account.CardNumber = sdr["CardNumber"].ToString();
+                            checkingAccounts.Add(obj);
+                        }
+                    }
+                    return checkingAccounts;
+                }
             }
             catch (Exception)
             {
@@ -139,13 +157,31 @@ namespace DataAccessLayer.Cards
             }
         }
 
-        public async Task<CheckingAccounts> ReadChecking(int id)
+        public async Task<List<CheckingAccounts>> ReadChecking(string email)
         {
             try
             {
-                Accounts acc = await _context.Accounts.FirstOrDefaultAsync(acc => acc.Id == id);
-                CheckingAccounts chacc = await _context.CheckingAccounts.FirstOrDefaultAsync(acc => acc.Account.Id == id);
-                return chacc;
+                List<CheckingAccounts> checkingAccounts = null;
+                using (var con = await DataConnection.Connection())
+                {
+                    var cmd = DataConnection.Command(con, "sp_GetCheckingAccount_ByEmail", CommandType.StoredProcedure);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    SqlDataReader sdr = await cmd.ExecuteReaderAsync();
+                    if (sdr.HasRows)
+                    {
+                        checkingAccounts = new List<CheckingAccounts>();
+                        while(await sdr.ReadAsync())
+                        {
+                            CheckingAccounts obj = new CheckingAccounts();
+                            obj.AccountId = int.Parse(sdr["ID"].ToString());
+                            obj.Account.Id = int.Parse(sdr["ID"].ToString());
+                            obj.Account.AccountNumber = sdr["AccountNumber"].ToString();
+                            obj.Account.CardNumber = sdr["CardNumber"].ToString();
+                            checkingAccounts.Add(obj);
+                        }
+                    }
+                    return checkingAccounts;
+                }
             }
             catch (Exception)
             {
@@ -197,6 +233,27 @@ namespace DataAccessLayer.Cards
         {
             Accounts acc = _context.Accounts.FirstOrDefault(acc => acc.ClientId == clientid);
             return (decimal)acc.Balance;
+        }
+
+        public async Task<CheckingAccounts> CheckingAccountsDetails(string id)
+        {
+            Accounts acc = await _context.Accounts.FirstOrDefaultAsync(acc => acc.AccountNumber == id);
+            EntityLayer.Persons.Persons person = await _context.Persons.FirstOrDefaultAsync(pr => pr.Id == acc.ClientId);
+            CheckingAccounts checking = await _context.CheckingAccounts.FirstOrDefaultAsync(ch => ch.Account.AccountNumber == id);
+            acc.Client = person;
+            checking.Account = acc;
+            return checking;
+        }
+
+        public async Task<SavingAccounts> SavingAccountsDetails(string id)
+        {
+            Accounts acc = await _context.Accounts.FirstOrDefaultAsync(acc => acc.AccountNumber == id);
+            EntityLayer.Persons.Persons person = await _context.Persons.FirstOrDefaultAsync(pr => pr.Id == acc.ClientId);
+            SavingAccounts checking = await _context.SavingAccounts.FirstOrDefaultAsync(ch => ch.Account.AccountNumber == id);
+            acc.Client = person;
+            checking.Account = acc;
+            return checking;
+            
         }
     }
 }

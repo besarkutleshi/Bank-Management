@@ -117,10 +117,21 @@
                     <p style="color:wheat">Welcome <br /> @User.Identity.Name</p>
                     <ul class="list-unstyled components mb-5">
                         <li>
+
                             <a asp-action="Login" asp-controller="Account">Home</a>
                         </li>
                         <li>
-                            <a href="#">My Account's</a>
+                            <a href="#myaccounts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">My Account's</a>
+                            <ul class="collapse list-unstyled" id="myaccounts">
+                                <li>
+                                    <a asp-action="MyCheckingAccounts" asp-controller="Card" 
+                                       asp-route-email="@User.Identity.Name">Checking Account</a>
+                                </li>
+                                <li>
+                                    <a asp-action="MySavingAccounts" asp-controller="Card" 
+                                       asp-route-email="@User.Identity.Name">Saving Accounts</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#">My Credit's</a>
