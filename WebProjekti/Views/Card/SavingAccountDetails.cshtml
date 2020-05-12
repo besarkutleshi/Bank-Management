@@ -3,48 +3,106 @@
     ViewBag.Title = "Details";
 }
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="row">
-                    <div class="col-sm-12" style="margin-bottom:15px">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="text-center">
-                                    <img lass="img-responsive center" src="~/Images/user-circle-solid.svg" width="100" height="100" />
-                                </div>
-                                <br />
-                                <h5 class="text-center">Hello, @Model.Account.Client.Name @Model.Account.Client.Surname</h5>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="col-sm-12" style="margin-bottom:15px">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <img lass="img-responsive center" src="~/Images/user-circle-solid.svg" width="100" height="100" />
                             </div>
+                            <br />
+                            <h5 class="text-center">Hello, @Model.Account.Client.Name @Model.Account.Client.Surname</h5>
                         </div>
                     </div>
-                    <br />
-                    <br />
-                    <div class="col-sm-12" style="margin-bottom:15px">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="text-center">
-                                    <img class="img-responsive center" src="~/Images/wallet-solid (1).svg" width="100" height="100" />
-                                </div>
-                                <h3 class="text-center">$@Model.Account.Balance</h3>
-                                <p class="text-center">Available Balance</p>
-                                <hr />
-                                <a asp-action="WithDrawal" asp-controller="Transaction" class="float-left text-success">Withdraw</a>
-                                <a asp-action="Deposit" asp-controller="Transaction" class="float-right text-success">Deposit</a>
+                </div>
+                <br />
+                <br />
+                <div class="col-sm-12" style="margin-bottom:15px">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <img class="img-responsive center" src="~/Images/wallet-solid (1).svg" width="100" height="100" />
                             </div>
+                            <h3 class="text-center">$@Model.Account.Balance</h3>
+                            <p class="text-center">Available Balance</p>
+                            <hr />
+                            <a asp-action="WithDrawal" asp-controller="Transaction" class="float-left text-success">Withdraw</a>
+                            <a asp-action="Deposit" asp-controller="Transaction" class="float-right text-success">Deposit</a>
                         </div>
                     </div>
-                    <div class="col-sm-12" style="margin-bottom:15px">
-                        <div class="card">
-                            <div class="card-body">
-
+                </div>
+                <div class="col-sm-12" style="margin-bottom:15px">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i class='fas fa-comments' style='font-size:100px; color:black'></i>
+                            </div>
+                            <br />
+                            <div class="text-center">
+                                <p>Have questions or concerns regarding your account ? <br /> Our experts are here to help you</p>
+                            </div>
+                            <br />
+                            <div class="text-center">
+                                <button class="btn btn-success">Chat with us</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-8">
-
+        </div>
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card" style="margin-bottom:15px">
+                        <div class="card-body">
+                            <h5>Personal Details</h5>
+                            <div class="text-center">
+                                <p>Name :@Model.Account.Client.Name @Model.Account.Client.Surname</p>
+                                <p>Personal Number :@Model.Account.Client.PersonalNumber</p>
+                                <p>Address : Street Nr. @Model.Account.Client.StreetNr,@Model.Account.Client.Street @Model.Account.Client.City - @Model.Account.Client.PostalCode @Model.Account.Client.Country</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="card" style="margin-bottom:15px">
+                        <div class="card-body">
+                            <h5>Account Details</h5>
+                            <div class="text-center">
+                                <p>Card Number : @Model.Account.CardNumber</p>
+                                <p>Account Number : @Model.Account.AccountNumber</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="card" style="margin-bottom:15px">
+                        <div class="card-body">
+                            <h5>Email Address</h5>
+                            <div class="text-center">
+                                <p>Email : @Model.Account.Client.Email</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="card" style="margin-bottom:15px">
+                        <div class="card-body">
+                            <h5>Phone Number</h5>
+                            <div class="text-center">
+                                <p>Phone Nr. : @Model.Account.Client.NrTel</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
+
+@section Scripts{
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+}
