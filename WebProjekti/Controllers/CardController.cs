@@ -34,6 +34,7 @@ namespace WebProjekti.Controllers
             {
                 return RedirectToAction("AccountsList");
             }
+            ViewBag.ErrorTitle = $"Error";
             ViewBag.ErrorMessage = $"Not Register";
             return View("Error");
         }
@@ -53,6 +54,7 @@ namespace WebProjekti.Controllers
             {
                 return RedirectToAction("AccountsList");
             }
+            ViewBag.ErrorTitle = $"Error";
             ViewBag.ErrorMessage = $"Not Register";
             return View("Error");
         }

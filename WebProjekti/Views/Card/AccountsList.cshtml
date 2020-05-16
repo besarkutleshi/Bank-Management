@@ -51,53 +51,53 @@
             <br/>
             <br/>
         <div class="row">
-        <div class="col-sm-12">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-center">Account List</h6>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive text-nowrap">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Client Name</th>
-                                    <th>Client Suname</th>
-                                    <th>Balance</th>
-                                    <th>Card Number</th>
-                                    <th>Start Date</th>
-                                    <th>Details</th>
-                                    <th>Update</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td>@item.Id</td>
-                                        <td>@item.Client.Name</td>
-                                        <td>@item.Client.Surname</td>
-                                        <td>@item.Balance</td>
-                                        <td>@item.CardNumber</td>
-                                        <td>@item.StartDate</td>
-                                        <td><a asp-action="Details" asp-controller="Card" asp-route-id="@item.Id" class="btn btn-primary">Details</a></td>
-                                        <td><a asp-action="UpdateAccount" asp-controller="Card" asp-route-id="@item.Id" class="btn btn-primary">Update</a></td>
-                                        <td>
-                                            <form asp-action="DeleteAccount" asp-controller="Client" asp-route-id="@item.Id" method="post">
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-    </div>
-</div>
+             <div class="col-sm-12">
+                 <div class="card shadow mb-4">
+                     <div class="card-header py-3">
+                         <h6 class="m-0 font-weight-bold text-center">Account List</h6>
+                     </div>
+                     <div class="card-body">
+                         <div class="table-responsive text-nowrap">
+                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                 <thead>
+                                     <tr>
+                                         <th>ID</th>
+                                         <th>Client Name</th>
+                                         <th>Client Suname</th>
+                                         <th>Balance</th>
+                                         <th>Card Number</th>
+                                         <th>Start Date</th>
+                                         <th>Details</th>
+                                         <th>Update</th>
+                                         <th>Delete</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     @foreach (var item in Model)
+                                     {
+                                         <tr>
+                                             <td>@item.Id</td>
+                                             <td>@item.Client.Name</td>
+                                             <td>@item.Client.Surname</td>
+                                             <td>@item.Balance</td>
+                                             <td>@item.CardNumber</td>
+                                             <td>@item.StartDate</td>
+                                             <td><a asp-action="Details" asp-controller="Card" asp-route-id="@item.Id" class="btn btn-primary">Details</a></td>
+                                             <td><a asp-action="UpdateAccount" asp-controller="Card" asp-route-id="@item.Id" class="btn btn-primary">Update</a></td>
+                                             <td>
+                                                 <form asp-action="DeleteAccount" asp-controller="Client" asp-route-id="@item.Id" method="post">
+                                                     <button type="submit" class="btn btn-danger">Delete</button>
+                                                 </form>
+                                             </td>
+                                         </tr>
+                                     }
+                                 </tbody>
+                             </table>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </div>
          }
         else
         {

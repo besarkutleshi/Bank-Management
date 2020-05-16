@@ -82,8 +82,15 @@ using EntityLayer.Transactions;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 11 "C:\Users\Admin\Desktop\WebProjekti\WebProjekti\Views\_ViewImports.cshtml"
+using EntityLayer.Credits;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ac996e14c93dff98b4871f88d43b1478578645ce", @"/Views/Transaction/ListDeposits.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b2786f95c442e09840e5a247e9799270e0bdf9ec", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5a78a38a60cf7bcc507145fc380ab22337670ba9", @"/Views/_ViewImports.cshtml")]
     public class Views_Transaction_ListDeposits : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Deposit>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "ListDeposits", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -148,7 +155,7 @@ using EntityLayer.Transactions;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                        </div>\r\n                        <div class=\"card-footer\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac996e14c93dff98b4871f88d43b1478578645ce7410", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac996e14c93dff98b4871f88d43b1478578645ce7592", async() => {
                 WriteLiteral("List Deposits");
             }
             );
@@ -185,7 +192,7 @@ using EntityLayer.Transactions;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                        </div>\r\n                        <div class=\"card-footer\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac996e14c93dff98b4871f88d43b1478578645ce9645", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac996e14c93dff98b4871f88d43b1478578645ce9827", async() => {
                 WriteLiteral("List Transfers");
             }
             );
@@ -222,7 +229,7 @@ using EntityLayer.Transactions;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                        </div>\r\n                        <div class=\"card-footer\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac996e14c93dff98b4871f88d43b1478578645ce11881", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac996e14c93dff98b4871f88d43b1478578645ce12063", async() => {
                 WriteLiteral("List Drawals");
             }
             );

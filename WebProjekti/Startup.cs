@@ -19,6 +19,7 @@ using EntityLayer.Entity;
 using DataAccessLayer.Cards;
 using WebProjekti.Controllers;
 using DataAccessLayer.Reports;
+using DataAccessLayer.Credit;
 
 namespace WebProjekti
 {
@@ -65,6 +66,7 @@ namespace WebProjekti
             services.AddScoped<AccountRepository>();
             services.AddScoped<TransactionRepository>();
             services.AddScoped<AccountReports>();
+            services.AddScoped<CreditRepository>();
 
             services.AddSingleton<DataProtectionPurposeStrings>();
 

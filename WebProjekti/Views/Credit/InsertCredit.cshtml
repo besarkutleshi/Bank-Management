@@ -1,0 +1,51 @@
+﻿@model Credits
+@{ 
+    ViewBag.Title = "Insert Credit";
+}
+
+    <div class="container-fluid">
+        <form action="InsertCredit" method="post" id="accountform">
+            <fieldset>
+                <legend>Data</legend>
+                <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label for="Client">Client</label>
+                        <select id="Client" class="form-control" asp-for="ClientId">
+                            <option value="-1">Choose</option>
+                            @foreach (var item in ViewBag.Clients)
+                            {
+                                <option value="@item.PersonId">@item.Person.Name @item.Person.Surname</option>
+                            }
+                        </select>
+                        <span asp-validation-for="ClientId" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="cardnumber">Balance</label>
+                        <input type="text" id="cardnumber" class="form-control" asp-for="Balance" required autofocus />
+                        <span asp-validation-for="Balance" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="accountnumber">Start Date</label>
+                        <input type="date" id="accountnumber" class="form-control" asp-for="StartDate" required autofocus />
+                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="password">End Date</label>
+                        <input type="date" id="password" class="form-control" asp-for="EndDate" required />
+                        <span asp-validation-for="EndDate" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="balance">Interes</label>
+                        <input type="text" id="balance" class="form-control" asp-for="Interes" required />
+                        <span asp-validation-for="Interes" class="text-danger"></span>
+                    </div>
+                </div>
+                <br /><br />
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-primary" style="width:100%">Insert Credit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>

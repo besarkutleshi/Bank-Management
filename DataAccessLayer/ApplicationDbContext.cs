@@ -28,11 +28,8 @@ namespace DataAccessLayer
         public virtual DbSet<Credits> Credits { get; set; }
         public virtual DbSet<EntityLayer.Departaments.Departaments> Departaments { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
-        public virtual DbSet<ExpresCredit> ExpresCredit { get; set; }
-        public virtual DbSet<PersonalCredit> PersonalCredit { get; set; }
         public virtual DbSet<EntityLayer.Persons.Persons> Persons { get; set; }
         public virtual DbSet<SavingAccounts> SavingAccounts { get; set; }
-        public virtual DbSet<StudentCredit> StudentCredit { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -201,7 +198,13 @@ namespace DataAccessLayer
 
                 entity.Property(e => e.Balance).HasColumnType("money");
 
-                entity.Property(e => e.ClientId).HasColumnName("ClientID");
+                entity.Property(e => e.ClientId).HasColumnName("ClientID"); 
+
+                entity.Property(e => e.StartDate).HasColumnName("StartDate").HasColumnType("date");
+
+                entity.Property(e => e.EndDate).HasColumnName("EndDate").HasColumnType("date");
+
+                entity.Property(e => e.Interes).HasColumnName("Interes").HasColumnType("decimal");
 
                 entity.HasOne(d => d.Client)
                     .WithMany(p => p.Credits)
@@ -246,39 +249,8 @@ namespace DataAccessLayer
                     .HasConstraintName("FK__Employees__Perso__1CBC4616");
             });
 
-            modelBuilder.Entity<ExpresCredit>(entity =>
-            {
+          
 
-                entity.Property(e => e.CreditId).HasColumnName("CreditID");
-
-                entity.Property(e => e.EndDate).HasColumnType("date");
-
-                entity.Property(e => e.Interes).HasColumnType("money");
-
-                entity.Property(e => e.StartDate).HasColumnType("date");
-
-                entity.HasOne(d => d.Credit)
-                    .WithMany()
-                    .HasForeignKey(d => d.CreditId)
-                    .HasConstraintName("FK__ExpresCre__Credi__2BFE89A6");
-            });
-
-            modelBuilder.Entity<PersonalCredit>(entity =>
-            {
-
-                entity.Property(e => e.CreditId).HasColumnName("CreditID");
-
-                entity.Property(e => e.EndDate).HasColumnType("date");
-
-                entity.Property(e => e.Interes).HasColumnType("money");
-
-                entity.Property(e => e.StartDate).HasColumnType("date");
-
-                entity.HasOne(d => d.Credit)
-                    .WithMany()
-                    .HasForeignKey(d => d.CreditId)
-                    .HasConstraintName("FK__PersonalC__Credi__2A164134");
-            });
 
             modelBuilder.Entity<EntityLayer.Persons.Persons>(entity =>
             {
@@ -321,21 +293,6 @@ namespace DataAccessLayer
                     .HasConstraintName("FK__SavingAcc__Accou__3493CFA7");
             });
 
-            modelBuilder.Entity<StudentCredit>(entity =>
-            {
-                entity.Property(e => e.CreditId).HasColumnName("CreditID");
-
-                entity.Property(e => e.EndDate).HasColumnType("date");
-
-                entity.Property(e => e.Interes).HasColumnType("money");
-
-                entity.Property(e => e.StartDate).HasColumnType("date");
-
-                entity.HasOne(d => d.Credit)
-                    .WithMany()
-                    .HasForeignKey(d => d.CreditId)
-                    .HasConstraintName("FK__StudentCr__Credi__2DE6D218");
-            });
 
             #endregion
             base.OnModelCreating(modelBuilder);

@@ -3,10 +3,10 @@ C:\Users\Admin\Desktop\WebProjekti\EntityLayer\bin\Debug\netcoreapp3.1\EntityLay
 C:\Users\Admin\Desktop\WebProjekti\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.runtimeconfig.dev.json
 C:\Users\Admin\Desktop\WebProjekti\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.dll
 C:\Users\Admin\Desktop\WebProjekti\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.pdb
+C:\Users\Admin\Desktop\WebProjekti\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csprojAssemblyReference.cache
 C:\Users\Admin\Desktop\WebProjekti\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\WebProjekti\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.AssemblyInfoInputs.cache
 C:\Users\Admin\Desktop\WebProjekti\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.AssemblyInfo.cs
 C:\Users\Admin\Desktop\WebProjekti\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.dll
 C:\Users\Admin\Desktop\WebProjekti\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.pdb
 C:\Users\Admin\Desktop\WebProjekti\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.genruntimeconfig.cache
-C:\Users\Admin\Desktop\WebProjekti\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csprojAssemblyReference.cache
