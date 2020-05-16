@@ -88,5 +88,11 @@ namespace WebProjekti.Controllers
             return View(obj);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> MyCredits(string email)
+        {
+            List<Credits> credits = await _creditRepository.MyCredits(email);
+            return View(credits);
+        }
     }
 }

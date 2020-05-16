@@ -6,6 +6,7 @@ namespace EntityLayer.Credits
     public partial class Credits
     {
         public int Id { get; set; }
+        public string CreditNumber { get; set; }
         public int ClientId { get; set; }
         public decimal? Balance { get; set; }
         public DateTime StartDate { get; set; }

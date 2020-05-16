@@ -1,9 +1,11 @@
 ﻿using EntityLayer.Credits;
 using EntityLayer.Persons;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -94,6 +96,51 @@ namespace DataAccessLayer.Credit
                 Credits credits = await _context.Credits.FirstOrDefaultAsync(c => c.Id == id);
                 EntityLayer.Persons.Persons persons = await _context.Persons.FirstOrDefaultAsync(p => p.Id == credits.Id);
                 credits.Client = persons;
+                return credits;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<Credits> GetCredit(string creditnumber)
+        {
+            try
+            {
+                Credits credits = await _context.Credits.FirstOrDefaultAsync(c => c.CreditNumber == creditnumber);
+                EntityLayer.Persons.Persons persons = await _context.Persons.FirstOrDefaultAsync(p => p.Id == credits.Id);
+                credits.Client = persons;
+                return credits;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<List<Credits>> MyCredits(string email)
+        {
+            try
+            {
+                List<Credits> credits = null;
+                using (var con = await DataConnection.Connection())
+                {
+                    var cmd = DataConnection.Command(con, "sp_GetCredits_ByEmail", CommandType.StoredProcedure);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    SqlDataReader sdr = await cmd.ExecuteReaderAsync();
+                    if (sdr.HasRows)
+                    {
+                        credits = new List<Credits>();
+                        while (await sdr.ReadAsync())
+                        {
+                            Credits obj = new Credits();
+                            obj.Id = int.Parse(sdr["ID"].ToString());
+                            obj.CreditNumber = sdr["CreditNumber"].ToString();
+                            credits.Add(obj);
+                        }
+                    }
+                }
                 return credits;
             }
             catch (Exception)

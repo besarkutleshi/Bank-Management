@@ -31,6 +31,7 @@
                             </div>
                             <div class="card-footer">
                                 <a asp-action="SavingAccountDetails" asp-controller="Card" asp-route-id="@item.Account.AccountNumber" class="btn btn-primary">Details</a>
+                                <a asp-action="Balance" asp-controller="Transaction" asp-route-id="@item.Account.AccountNumber" class="btn btn-primary">Balance</a>
                             </div>
                         </div>
                     </div>

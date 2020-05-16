@@ -125,5 +125,10 @@ namespace DataAccessLayer.Persons
             context.Persons.ToList();
             return context.Employees.FirstOrDefault(p => p.Person.Email == email);
         }
+
+        public async Task<EntityLayer.Persons.Persons> GetPersons(int id)
+        {
+            return await context.Persons.FirstOrDefaultAsync(p => p.Id == id);
+        }
     }
 }

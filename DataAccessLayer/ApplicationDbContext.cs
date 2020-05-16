@@ -200,6 +200,8 @@ namespace DataAccessLayer
 
                 entity.Property(e => e.ClientId).HasColumnName("ClientID"); 
 
+                entity.Property(e => e.CreditNumber).HasColumnName("CreditNumber"); 
+
                 entity.Property(e => e.StartDate).HasColumnName("StartDate").HasColumnType("date");
 
                 entity.Property(e => e.EndDate).HasColumnName("EndDate").HasColumnType("date");

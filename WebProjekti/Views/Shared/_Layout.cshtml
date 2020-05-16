@@ -134,7 +134,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">My Credit's</a>
+                            <a asp-action="MyCredits" asp-controller="Credit" asp-route-email="@User.Identity.Name">My Credit's</a>
                         </li>
                         <li>
                             <a href="#mytransactions" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">My Transaction's</a>
@@ -149,7 +149,7 @@
                                             <a asp-action="ListTransfers" asp-controller="Transaction">Transfers</a>
                                         </li>
                                         <li>
-                                            <a asp-action="ListWithDrawals" asp-controller="Transaction">With Drawals</a>
+                                            <a asp-action="ListDrawals" asp-controller="Transaction">With Drawals</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -163,9 +163,6 @@
                                     <a asp-action="WithDrawal" asp-controller="Transaction">With Drawal</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li>
-                            <a asp-action="Balance" asp-controller="Transaction">My Balance</a>
                         </li>
                         <li>
                             <a href="#">E-Banking</a>

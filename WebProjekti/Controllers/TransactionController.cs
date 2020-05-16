@@ -22,12 +22,12 @@ namespace WebProjekti.Controllers
             this._transactionRepository = transactionRepository;
             this._accountRepository = accountRepository;
             this._accountReports = accountReports;
-            CurrentAccount = _accountRepository.GetAccount((int)AccountController.CurrentClient.PersonId); 
-            if (CurrentAccount != null)
-            {
-                ViewBag.AccountNumber = CurrentAccount.AccountNumber;
-                ViewBag.CardNumber = CurrentAccount.CardNumber;
-            }
+            //CurrentAccount = _accountRepository.GetAccount((int)AccountController.CurrentClient.PersonId); 
+            //if (CurrentAccount != null)
+            //{
+            //    ViewBag.AccountNumber = CurrentAccount.AccountNumber;
+            //    ViewBag.CardNumber = CurrentAccount.CardNumber;
+            //}
         }
 
         [HttpGet]
@@ -104,7 +104,7 @@ namespace WebProjekti.Controllers
 
         private void GetAtributes(Transaction obj)
         {
-            obj.ClientID = (int)AccountController.CurrentClient.PersonId;
+            obj.ClientID = (int)AccountController.CurrentClient.Id;
             obj.ExecutionDate = DateTime.Now;
         }
 
@@ -140,43 +140,52 @@ namespace WebProjekti.Controllers
         [HttpGet]
         public async Task<IActionResult> ListDeposits()
         {
-            List<Deposit> deposits = await _transactionRepository.GetDeposits((int)AccountController.CurrentClient.PersonId);
-            ViewBag.DepositsCount = deposits.Count;
-            ViewBag.TransferCount = (await _transactionRepository.GetTransfers((int)AccountController.CurrentClient.PersonId)).Count;
-            ViewBag.DrawalsCount = (await _transactionRepository.GetWithDrawals((int)AccountController.CurrentClient.PersonId)).Count;
+            List<Deposit> deposits = await _transactionRepository.GetDeposits((int)AccountController.CurrentClient.Id);
+            ViewBag.DepositsCount = Count(deposits);
+            ViewBag.TransferCount = Count(await _transactionRepository.GetTransfers((int)AccountController.CurrentClient.Id));
+            ViewBag.DrawalsCount = Count(await _transactionRepository.GetWithDrawals((int)AccountController.CurrentClient.Id));
             return View(deposits);
         } 
+
+        private int Count<T>(List<T> ts)
+        {
+            if(ts == null)
+            {
+                return 0;
+            }
+            return ts.Count;
+        }
 
         [HttpGet]
         public async Task<IActionResult> ListTransfers()
         {
-            List<Transfer> transfers = await _transactionRepository.GetTransfers((int)AccountController.CurrentClient.PersonId);
-            ViewBag.TransferCount = transfers.Count;
-            ViewBag.DrawalsCount = (await _transactionRepository.GetWithDrawals((int)AccountController.CurrentClient.PersonId)).Count;
-            ViewBag.DepositsCount = (await _transactionRepository.GetDeposits((int)AccountController.CurrentClient.PersonId)).Count;
+            List<Transfer> transfers = await _transactionRepository.GetTransfers((int)AccountController.CurrentClient.Id);
+            ViewBag.TransferCount = Count(transfers);
+            ViewBag.DrawalsCount = Count(await _transactionRepository.GetWithDrawals((int)AccountController.CurrentClient.Id));
+            ViewBag.DepositsCount = Count(await _transactionRepository.GetDeposits((int)AccountController.CurrentClient.Id));
             return View(transfers);
         }
 
         [HttpGet]
         public async Task<IActionResult> ListDrawals()
         {
-            List<WithDrawal> drawals = await _transactionRepository.GetWithDrawals((int)AccountController.CurrentClient.PersonId);
-            ViewBag.DrawalsCount = drawals.Count;
-            ViewBag.TransferCount = (await _transactionRepository.GetTransfers((int)AccountController.CurrentClient.PersonId)).Count;
-            ViewBag.DepositsCount = (await _transactionRepository.GetDeposits((int)AccountController.CurrentClient.PersonId)).Count;
+            List<WithDrawal> drawals = await _transactionRepository.GetWithDrawals((int)AccountController.CurrentClient.Id);
+            ViewBag.DrawalsCount = Count(drawals);
+            ViewBag.TransferCount = Count(await _transactionRepository.GetTransfers((int)AccountController.CurrentClient.Id));
+            ViewBag.DepositsCount = Count(await _transactionRepository.GetDeposits((int)AccountController.CurrentClient.Id));
             return View(drawals);
         }
 
         [HttpGet]
         public async Task<IActionResult> Balance()
         {
-            ViewBag.Balance = _accountRepository.GetBalance((int)AccountController.CurrentClient.PersonId);
-            ViewBag.DataDeposits = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.PersonId, "sp_GetDepositsForMonth"));
-            ViewBag.DataTransfers = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.PersonId, "sp_GetTransfersForMonth"));
-            ViewBag.DataDrawals = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.PersonId, "sp_GetDrawalsForMonth"));
-            ViewBag.LastDeposits = await _accountReports.GetDeposits((int)AccountController.CurrentClient.PersonId);
-            ViewBag.LastTransfers = await _accountReports.GetTransfers((int)AccountController.CurrentClient.PersonId);
-            ViewBag.LastDrawals = await _accountReports.GetWithDrawals((int)AccountController.CurrentClient.PersonId);
+            ViewBag.Balance = _accountRepository.GetBalance((int)AccountController.CurrentClient.Id);
+            ViewBag.DataDeposits = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.Id, "sp_GetDepositsForMonth"));
+            ViewBag.DataTransfers = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.Id, "sp_GetTransfersForMonth"));
+            ViewBag.DataDrawals = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.Id, "sp_GetDrawalsForMonth"));
+            ViewBag.LastDeposits = await _accountReports.GetDeposits((int)AccountController.CurrentClient.Id);
+            ViewBag.LastTransfers = await _accountReports.GetTransfers((int)AccountController.CurrentClient.Id);
+            ViewBag.LastDrawals = await _accountReports.GetWithDrawals((int)AccountController.CurrentClient.Id);
             return View();
         }
 

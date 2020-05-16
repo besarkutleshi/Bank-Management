@@ -23,7 +23,7 @@ namespace WebProjekti.Controllers
         private readonly ClientRepository _clientRepository;
         private readonly EmployeeRepository _employeeRepository;
         private readonly ILogger<AccountController> logger;
-        public static Clients CurrentClient = null;
+        public static Persons CurrentClient = null;
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ILogger<AccountController> logger,
             IConfiguration configuration,ClientRepository clientRepository,EmployeeRepository employee)
@@ -293,7 +293,11 @@ namespace WebProjekti.Controllers
 
                 if (result.Succeeded)
                 {
-                    CurrentClient = await _clientRepository.GetCurrentClient(user.ClientID);
+                    CurrentClient = await _employeeRepository.GetPersons(user.ClientID);
+                    if(CurrentClient == null)
+                    {
+                        CurrentClient = await _employeeRepository.GetPersons(user.ClientID);
+                    }
                     var us = await userManager.FindByEmailAsync(model.Email);
                     var roles = await userManager.GetRolesAsync(us);
                     foreach (var item in roles)

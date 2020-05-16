@@ -4,9 +4,16 @@
 }
 
     <div class="container-fluid">
-        @if (Model.Any())
+        @if (Model == null)
         {
             <div class="row">
+                <div class="col-sm-12 text-center">
+                    No Drawals
+                </div>
+            </div>
+        }
+        else
+        {<div class="row">
                 <div class="col-sm-4">
                     <div class="card">
                         <div class="card-header">
@@ -87,14 +94,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        }
-        else
-        {
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    No Deposits
                 </div>
             </div>
         }
