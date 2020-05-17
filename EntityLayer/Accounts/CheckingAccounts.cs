@@ -7,7 +7,7 @@ namespace EntityLayer.Accounts
     {
         public CheckingAccounts()
         {
-            Account = new Accounts();
+           // Account = new Accounts();
         }
         public int? AccountId { get; set; }
         public decimal? Interes { get; set; }

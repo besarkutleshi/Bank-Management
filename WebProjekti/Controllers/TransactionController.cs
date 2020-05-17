@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DataAccessLayer.Cards;
+using DataAccessLayer.Credit;
 using DataAccessLayer.Reports;
 using EntityLayer.Accounts;
+using EntityLayer.Credits;
 using EntityLayer.Transactions;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -16,18 +18,15 @@ namespace WebProjekti.Controllers
         private readonly TransactionRepository _transactionRepository;
         private readonly AccountRepository _accountRepository;
         private readonly AccountReports _accountReports;
+        private readonly CreditRepository _creditRepository;
         private static Accounts CurrentAccount;
-        public TransactionController(TransactionRepository transactionRepository, AccountRepository accountRepository, AccountReports accountReports)
+        public TransactionController(TransactionRepository transactionRepository, AccountRepository accountRepository, AccountReports accountReports
+            ,CreditRepository creditRepository)
         {
             this._transactionRepository = transactionRepository;
             this._accountRepository = accountRepository;
             this._accountReports = accountReports;
-            //CurrentAccount = _accountRepository.GetAccount((int)AccountController.CurrentClient.PersonId); 
-            //if (CurrentAccount != null)
-            //{
-            //    ViewBag.AccountNumber = CurrentAccount.AccountNumber;
-            //    ViewBag.CardNumber = CurrentAccount.CardNumber;
-            //}
+            this._creditRepository = creditRepository;
         }
 
         [HttpGet]
@@ -41,7 +40,7 @@ namespace WebProjekti.Controllers
         {
             try
             {
-                obj.ClientID = (int)CurrentAccount.ClientId;
+                obj.ClientID = _accountRepository.GetId(obj.AccountNumber);
                 obj.ExecutionDate = DateTime.Now;
                 Accounts toAcc = _accountRepository.GetAccount(obj.ToAccountNumber);
                 if(toAcc == null)
@@ -177,16 +176,57 @@ namespace WebProjekti.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Balance()
+        public async Task<IActionResult> Balance(string id)
         {
-            ViewBag.Balance = _accountRepository.GetBalance((int)AccountController.CurrentClient.Id);
-            ViewBag.DataDeposits = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.Id, "sp_GetDepositsForMonth"));
-            ViewBag.DataTransfers = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.Id, "sp_GetTransfersForMonth"));
-            ViewBag.DataDrawals = JsonConvert.SerializeObject(await _accountReports.GetRaports((int)AccountController.CurrentClient.Id, "sp_GetDrawalsForMonth"));
-            ViewBag.LastDeposits = await _accountReports.GetDeposits((int)AccountController.CurrentClient.Id);
-            ViewBag.LastTransfers = await _accountReports.GetTransfers((int)AccountController.CurrentClient.Id);
-            ViewBag.LastDrawals = await _accountReports.GetWithDrawals((int)AccountController.CurrentClient.Id);
+            ViewBag.Balance = _accountRepository.GetBalance(id);
+            ViewBag.DataDeposits = JsonConvert.SerializeObject(await _accountReports.GetRaports(id, "sp_GetDepositsForMonth"));
+            ViewBag.DataTransfers = JsonConvert.SerializeObject(await _accountReports.GetRaports(id, "sp_GetTransfersForMonth"));
+            ViewBag.DataDrawals = JsonConvert.SerializeObject(await _accountReports.GetRaports(id, "sp_GetDrawalsForMonth"));
+            ViewBag.LastDeposits = await _accountReports.GetDeposits(id);
+            ViewBag.LastTransfers = await _accountReports.GetTransfers(id);
+            ViewBag.LastDrawals = await _accountReports.GetWithDrawals(id);
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult PayCredit()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> PayCredit(PayCredit payCredit)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    GetAtributes(payCredit);
+                    Credits credits = await _creditRepository.GetCredit(payCredit.CreditNumber);
+                    if (credits == null)
+                    {
+                        return DisplayError("Not Successful", "This Credit Not Exist");
+                    }
+                    Accounts acc = _accountRepository.GetAccount(payCredit.AccountNumber);
+                    if (acc == null)
+                    {
+                        return DisplayError("Not Successful", "This Account Not Exist");
+                    }
+                    if (await _transactionRepository.PayCredit(payCredit) != null)
+                    {
+                        return RedirectToAction("ConfirmTransaction");
+                    }
+                }
+                return DisplayError("Not Successful", "This Account Not Exist");
+            }
+            catch (Exception ex)
+            { 
+                return DisplayError("Not Successful", ex.Message);
+            }
+        }
+
+        public async Task<IActionResult> ListPayment(string email)
+        {
+
         }
 
     }

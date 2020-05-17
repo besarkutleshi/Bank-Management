@@ -187,5 +187,59 @@ namespace DataAccessLayer.Cards
 			return new WithDrawal(sdr["FullName"].ToString(), sdr["ClientName"].ToString(), Convert.ToDateTime(sdr["ExecutionDate"]), sdr["CardNumber"].ToString(),
 				   sdr["AccountNumber"].ToString(), sdr["Description"].ToString(), double.Parse(sdr["Amount"].ToString()));
 		}
+
+		public async Task<PayCredit> PayCredit(PayCredit payCredit)
+		{
+			try
+			{
+				int value = 0;
+				using (var con = await DataConnection.Connection())
+				{
+					var cmd = DataConnection.Command(con, "sp_PayCredit", CommandType.StoredProcedure);
+					cmd.Parameters.AddWithValue("@FullName", payCredit.FullName);
+					cmd.Parameters.AddWithValue("@ClientID", payCredit.ClientID);
+					cmd.Parameters.AddWithValue("@CardNumber", payCredit.CardNumber);
+					cmd.Parameters.AddWithValue("@AccountNumber", payCredit.AccountNumber);
+					cmd.Parameters.AddWithValue("@CreditNumber", payCredit.CreditNumber);
+					cmd.Parameters.AddWithValue("@Amount", payCredit.Amount);
+					cmd.Parameters.AddWithValue("@Description", payCredit.Description);
+					value = await DataConnection.GetValue(cmd);
+				}
+				return await DataConnection.Result(value, payCredit);
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
+
+		public async Task<List<PayCredit>> PayCredits(string email)
+		{
+			try
+			{
+				List<PayCredit> payCredits = null;
+				using (var con = await DataConnection.Connection())
+				{
+					var cmd = DataConnection.Command(con, "sp_GetPayCredits", CommandType.StoredProcedure);
+					cmd.Parameters.AddWithValue("@Email", email);
+					SqlDataReader sdr = await cmd.ExecuteReaderAsync();
+					if (sdr.HasRows)
+					{
+						payCredits = new List<PayCredit>();
+						while (await sdr.ReadAsync())
+						{
+							payCredits.Add(new PayCredit(sdr["FullName"].ToString(), sdr["ClientName"].ToString(), Convert.ToDateTime(sdr["ExecutionDate"].ToString()),
+								sdr["CardNumber"].ToString(), sdr["AccountNumber"].ToString(), sdr["Description"].ToString(), double.Parse(sdr["Amount"].ToString()), sdr["CreditNumber"].ToString()));
+						}
+					}
+				}
+				return payCredits;
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+		}
 	}
 }

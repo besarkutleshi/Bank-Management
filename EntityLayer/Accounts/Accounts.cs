@@ -7,7 +7,7 @@ namespace EntityLayer.Accounts
     {
         public Accounts()
         {
-            Client = new Persons.Persons();
+            //Client = new Persons.Persons();
         }
         public int Id { get; set; }
         public int? ClientId { get; set; }

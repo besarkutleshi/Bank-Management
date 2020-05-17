@@ -67,6 +67,7 @@ namespace WebProjekti
             services.AddScoped<TransactionRepository>();
             services.AddScoped<AccountReports>();
             services.AddScoped<CreditRepository>();
+            services.AddScoped<PersonRepository>();
 
             services.AddSingleton<DataProtectionPurposeStrings>();
 

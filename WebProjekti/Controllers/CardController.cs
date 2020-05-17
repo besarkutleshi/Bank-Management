@@ -11,18 +11,18 @@ namespace WebProjekti.Controllers
 {
     public class CardController : Controller
     {
-        private readonly ClientRepository _clientRepository;
+        private readonly PersonRepository _personRepository;
         private readonly AccountRepository _accountRepository;
-        public CardController(ClientRepository clientRepository,
+        public CardController(PersonRepository personRepository,
             AccountRepository savingAccounts)
         {
-            _clientRepository = clientRepository;
+            _personRepository = personRepository;
             _accountRepository = savingAccounts;
         }
         [HttpGet]
         public async Task<IActionResult> InsertSavingAccount()
         {
-            ViewBag.Clients = await _clientRepository.Read();
+            ViewBag.Clients = await _personRepository.GetPersons();
             return View();
         }
 
@@ -42,7 +42,7 @@ namespace WebProjekti.Controllers
         [HttpGet]
         public async Task<IActionResult> InsertCheckingAccount()
         {
-            ViewBag.Clients = await _clientRepository.Read();
+            ViewBag.Clients = await _personRepository.GetPersons();
             return View();
         }
 

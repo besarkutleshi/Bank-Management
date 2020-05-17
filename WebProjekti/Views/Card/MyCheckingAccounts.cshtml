@@ -14,7 +14,7 @@
         {
             <div class="row">
                 <div class="col-sm-12">
-                    <h5 class="text-center">My Saving Account's</h5>
+                    <h5 class="text-center">My Checking Account's</h5>
                 </div>
             </div>
             <br />
@@ -31,6 +31,7 @@
                             </div>
                             <div class="card-footer">
                                 <a asp-action="CheckingAccountDetails" asp-controller="Card" asp-route-id="@item.Account.AccountNumber" class="btn btn-primary">Details</a>
+                                <a asp-action="Balance" asp-controller="Transaction" asp-route-id="@item.Account.AccountNumber" class="btn btn-primary">Balance</a>
                             </div>
                         </div>
                     </div>

@@ -15,7 +15,7 @@
                         <option value="-1">Choose</option>
                         @foreach (var item in ViewBag.Clients)
                         {
-                            <option value="@item.PersonId">@item.Person.Name @item.Person.Surname</option>
+                            <option value="@item.Id">@item.Name @item.Surname</option>
                         }
                     </select>
                     <span asp-validation-for="Account.ClientId" class="text-danger"></span>

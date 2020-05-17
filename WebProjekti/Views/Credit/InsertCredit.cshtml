@@ -9,12 +9,17 @@
                 <legend>Data</legend>
                 <div class="row">
                     <div class="col-sm-4 form-group">
+                        <label for="creditnumber">Credit Number</label>
+                        <input type="text" id="creditnumber" class="form-control" asp-for="CreditNumber" required />
+                        <span asp-validation-for="CreditNumber" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4 form-group">
                         <label for="Client">Client</label>
                         <select id="Client" class="form-control" asp-for="ClientId">
                             <option value="-1">Choose</option>
                             @foreach (var item in ViewBag.Clients)
                             {
-                                <option value="@item.PersonId">@item.Person.Name @item.Person.Surname</option>
+                                <option value="@item.Id">@item.Name @item.Surname</option>
                             }
                         </select>
                         <span asp-validation-for="ClientId" class="text-danger"></span>
@@ -26,7 +31,7 @@
                     </div>
                     <div class="col-sm-4 form-group">
                         <label for="accountnumber">Start Date</label>
-                        <input type="date" id="accountnumber" class="form-control" asp-for="StartDate" required autofocus />
+                        <input type="date" id="accountnumber" class="form-control" asp-for="StartDate" required />
                         <span asp-validation-for="StartDate" class="text-danger"></span>
                     </div>
                     <div class="col-sm-4 form-group">

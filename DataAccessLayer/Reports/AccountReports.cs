@@ -12,7 +12,7 @@ namespace DataAccessLayer.Reports
     public class AccountReports
     {
 		private string[] Months = new string[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-        public async Task<List<DataPoint>> GetRaports(int clientid,string procedure)
+        public async Task<List<DataPoint>> GetRaports(string accountnumber,string procedure)
         {
 			try
 			{
@@ -23,7 +23,7 @@ namespace DataAccessLayer.Reports
 					{
 						var cmd = DataConnection.Command(con, procedure, CommandType.StoredProcedure);
 						cmd.Parameters.AddWithValue("@Month", i + 1);
-						cmd.Parameters.AddWithValue("@ClientID", clientid);
+						cmd.Parameters.AddWithValue("@AccountNumber", accountnumber);
 						SqlDataReader sdr = await cmd.ExecuteReaderAsync();
 						if (sdr.HasRows)
 						{
@@ -44,7 +44,7 @@ namespace DataAccessLayer.Reports
 			}
         }
 
-		public async Task<List<Deposit>> GetDeposits(int clientid)
+		public async Task<List<Deposit>> GetDeposits(string accountnumber)
 		{
 			try
 			{
@@ -52,7 +52,7 @@ namespace DataAccessLayer.Reports
 				using (var con = await DataConnection.Connection())
 				{
 					var cmd = DataConnection.Command(con, "sp_GetLastDeposits", CommandType.StoredProcedure);
-					cmd.Parameters.AddWithValue("@ClientID", clientid);
+					cmd.Parameters.AddWithValue("@Accountnumber", accountnumber);
 					SqlDataReader sdr = await cmd.ExecuteReaderAsync();
 					if (sdr.HasRows)
 					{
@@ -74,7 +74,7 @@ namespace DataAccessLayer.Reports
 			}
 		}
 
-		public async Task<List<Transfer>> GetTransfers(int clientid)
+		public async Task<List<Transfer>> GetTransfers(string accountnumber)
 		{
 			try
 			{
@@ -82,7 +82,7 @@ namespace DataAccessLayer.Reports
 				using (var con = await DataConnection.Connection())
 				{
 					var cmd = DataConnection.Command(con, "sp_GetLastTransfers", CommandType.StoredProcedure);
-					cmd.Parameters.AddWithValue("@ClientID", clientid);
+					cmd.Parameters.AddWithValue("@Accountnumber", accountnumber);
 					SqlDataReader sdr = await cmd.ExecuteReaderAsync();
 					if (sdr.HasRows)
 					{
@@ -104,7 +104,7 @@ namespace DataAccessLayer.Reports
 			}
 		}
 
-		public async Task<List<WithDrawal>> GetWithDrawals(int clientid)
+		public async Task<List<WithDrawal>> GetWithDrawals(string accountnumber)
 		{
 			try
 			{
@@ -112,7 +112,7 @@ namespace DataAccessLayer.Reports
 				using (var con = await DataConnection.Connection())
 				{
 					var cmd = DataConnection.Command(con, "sp_GetLastWithDrawals", CommandType.StoredProcedure);
-					cmd.Parameters.AddWithValue("@ClientID", clientid);
+					cmd.Parameters.AddWithValue("@Accountnumber", accountnumber);
 					SqlDataReader sdr = await cmd.ExecuteReaderAsync();
 					if (sdr.HasRows)
 					{

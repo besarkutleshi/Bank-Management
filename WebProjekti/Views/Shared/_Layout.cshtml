@@ -165,19 +165,13 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">E-Banking</a>
-                        </li>
-                        <li>
-                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <a href="#payment" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Payment</a>
+                            <ul class="collapse list-unstyled" id="payment">
                                 <li>
-                                    <a href="#">Page 1</a>
+                                    <a asp-action="PayCredit" asp-controller="Transaction">Pay Credit</a>
                                 </li>
                                 <li>
-                                    <a href="#">Page 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">Page 3</a>
+                                    <a asp-action="ListPayment" asp-controller="Transaction" asp-route-email="@User.Identity.Name">List Payments </a>
                                 </li>
                             </ul>
                         </li>

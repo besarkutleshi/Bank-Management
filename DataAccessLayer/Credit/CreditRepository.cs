@@ -109,7 +109,7 @@ namespace DataAccessLayer.Credit
             try
             {
                 Credits credits = await _context.Credits.FirstOrDefaultAsync(c => c.CreditNumber == creditnumber);
-                EntityLayer.Persons.Persons persons = await _context.Persons.FirstOrDefaultAsync(p => p.Id == credits.Id);
+                EntityLayer.Persons.Persons persons = await _context.Persons.FirstOrDefaultAsync(p => p.Id == credits.ClientId);
                 credits.Client = persons;
                 return credits;
             }

@@ -13,18 +13,18 @@ namespace WebProjekti.Controllers
     public class CreditController : Controller
     {
         private readonly CreditRepository _creditRepository;
-        private readonly ClientRepository _clientRepository;
+        private readonly PersonRepository _personRepository;
 
-        public CreditController(CreditRepository creditRepository, ClientRepository clientRepository)
+        public CreditController(CreditRepository creditRepository, PersonRepository personRepository)
         {
             _creditRepository = creditRepository;
-            _clientRepository = clientRepository;
+            _personRepository = personRepository;
         }
 
         [HttpGet]
         public async Task<IActionResult> InsertCredit()
         {
-            ViewBag.Clients = await _clientRepository.Read();
+            ViewBag.Clients = await _personRepository.GetPersons();
             return View();
         }
 
@@ -82,7 +82,7 @@ namespace WebProjekti.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> CreditDetails(int id)
+        public async Task<IActionResult> CreditDetails(string id)
         {
             Credits obj = await _creditRepository.GetCredit(id);
             return View(obj);

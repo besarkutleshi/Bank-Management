@@ -13,9 +13,9 @@
                 </div>
                 <div class="col-sm-12">
                     <h5 class="text-center">Last Deposits</h5>
-                    @foreach (var item in ViewBag.LastDeposits)
+                    @if (ViewBag.LastDeposits != null)
                     {
-                        if (ViewBag.LastDeposits != null)
+                        @foreach (var item in ViewBag.LastDeposits)
                         {
                             <div class="card" style="border-radius:20%">
                                 <div class="card-body">
@@ -24,50 +24,24 @@
                                 </div>
                             </div>
                             <br />
-                        }
-                        else
-                        {
-                            <div class="card" style="border-radius:20%">
-                                <div class="card-body">
-                                    <h6>No Transfers</h6>
-                                </div>
-                            </div>
                         }
                     }
-                </div>
-                <br />
-                <br />
-                <div class="col-sm-12" >
-                    <h5 class="text-center">Last Transfers</h5>
-                    @foreach (var item in ViewBag.LastTransfers)
+                    else
                     {
-                        if (ViewBag.LastTransfers != null)
-                        {
-                            <div class="card" style="border-radius:20%">
-                                <div class="card-body">
-                                    <h6 class="float-left">@item.Description</h6>
-                                    <h6 class="float-right">$@item.Amount</h6>
-                                </div>
+                        <div class="card" style="border-radius:20%">
+                            <div class="card-body">
+                                <h6>No Transfers</h6>
                             </div>
-                            <br />
-                        }
-                        else
-                        {
-                            <div class="card" style="border-radius:20%">
-                                <div class="card-body">
-                                    <h6>No Transfers</h6>
-                                </div>
-                            </div>
-                        }
+                        </div>
                     }
                 </div>
                 <br />
                 <br />
                 <div class="col-sm-12">
-                    <h5 class="text-center">Last With Drawals</h5>
-                    @foreach (var item in ViewBag.LastDrawals)
+                    <h5 class="text-center">Last Transfers</h5>
+                    @if (ViewBag.LastTransfers != null)
                     {
-                        if (ViewBag.LastDrawals != null)
+                        @foreach (var item in ViewBag.LastTransfers)
                         {
                             <div class="card" style="border-radius:20%">
                                 <div class="card-body">
@@ -77,14 +51,41 @@
                             </div>
                             <br />
                         }
-                        else
+                    }
+                    else
+                    {
+                        <div class="card" style="border-radius:20%">
+                            <div class="card-body">
+                                <h6>No Transfers</h6>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                <br />
+                <br />
+                <div class="col-sm-12">
+                    <h5 class="text-center">Last With Drawals</h5>
+                    @if (ViewBag.LastDrawals != null)
+                    {
+                        @foreach (var item in ViewBag.LastDrawals)
                         {
                             <div class="card" style="border-radius:20%">
                                 <div class="card-body">
-                                    <h6>No With Drawals</h6>
+                                    <h6 class="float-left">@item.Description</h6>
+                                    <h6 class="float-right">$@item.Amount</h6>
                                 </div>
                             </div>
+                            <br />
                         }
+                    }
+                    else
+                    {
+                        <div class="card" style="border-radius:20%">
+                            <div class="card-body">
+                                <h6>No With Drawals</h6>
+                            </div>
+                        </div>
                     }
                 </div>
             </div>

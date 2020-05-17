@@ -89,6 +89,7 @@ namespace DataAccessLayer.Cards
                         {
                             SavingAccounts obj = new SavingAccounts();
                             obj.AccountId = int.Parse(sdr["ID"].ToString());
+                            obj.Account = new Accounts();
                             obj.Account.Id = int.Parse(sdr["ID"].ToString());
                             obj.Account.AccountNumber = sdr["AccountNumber"].ToString();
                             obj.Account.CardNumber = sdr["CardNumber"].ToString();
@@ -174,6 +175,7 @@ namespace DataAccessLayer.Cards
                         {
                             CheckingAccounts obj = new CheckingAccounts();
                             obj.AccountId = int.Parse(sdr["ID"].ToString());
+                            obj.Account = new Accounts();
                             obj.Account.Id = int.Parse(sdr["ID"].ToString());
                             obj.Account.AccountNumber = sdr["AccountNumber"].ToString();
                             obj.Account.CardNumber = sdr["CardNumber"].ToString();
@@ -229,9 +231,9 @@ namespace DataAccessLayer.Cards
             return _context.Accounts.FirstOrDefault(acc => acc.AccountNumber == accountnumber);
         }
 
-        public decimal GetBalance(int clientid)
+        public decimal GetBalance(string accountnumber)
         {
-            Accounts acc = _context.Accounts.FirstOrDefault(acc => acc.ClientId == clientid);
+            Accounts acc = _context.Accounts.FirstOrDefault(acc => acc.AccountNumber == accountnumber);
             return (decimal)acc.Balance;
         }
 
@@ -254,6 +256,11 @@ namespace DataAccessLayer.Cards
             checking.Account = acc;
             return checking;
             
+        }
+
+        public int GetId(string accountnumber)
+        {
+            return (int)_context.Accounts.Where(acc => acc.AccountNumber == accountnumber).Select(acc => acc.ClientId).FirstOrDefault();
         }
     }
 }
