@@ -226,7 +226,7 @@ namespace WebProjekti.Controllers
 
         public async Task<IActionResult> ListPayment(string email)
         {
-
+            return View(await _transactionRepository.PayCredits(email));
         }
 
     }

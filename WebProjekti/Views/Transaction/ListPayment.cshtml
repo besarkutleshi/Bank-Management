@@ -1,0 +1,60 @@
+﻿@model List<PayCredit>
+@{
+    ViewBag.Title = "Payment Credit List";
+}
+
+<div class="container-fluid">
+    @if (Model == null)
+    {
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                No Payments
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-center">Payment List</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive text-nowrap">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Full Name</th>
+                                        <th>Name</th>
+                                        <th>Card Number</th>
+                                        <th>Account Number</th>
+                                        <th>Credit Number</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.FullName</td>
+                                            <td>@item.Client.Name</td>
+                                            <td>@item.CardNumber</td>
+                                            <td>@item.AccountNumber</td>
+                                            <td>@item.CreditNumber</td>
+                                            <td>@item.Amount</td>
+                                            <td>@item.ExecutionDate</td>
+                                            <td>@item.Description</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
