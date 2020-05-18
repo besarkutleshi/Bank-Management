@@ -300,18 +300,25 @@ namespace WebProjekti.Controllers
                     }
                     var us = await userManager.FindByEmailAsync(model.Email);
                     var roles = await userManager.GetRolesAsync(us);
-                    foreach (var item in roles)
+                    if (string.IsNullOrEmpty(returnUrl))
                     {
-                        if (item == "Admin" || item == "Super Admin")
+                        foreach (var item in roles)
                         {
-                            return RedirectToAction("AdminIndex", "Home");
+                            if (item == "Admin" || item == "Super Admin")
+                            {
+                                return RedirectToAction("AdminIndex", "Home");
+                            }
+                            if (item == "User")
+                            {
+                                return RedirectToAction("UserView", "Home");
+                            }
                         }
                     }
 
-                    if (User.IsInRole("Super Admin"))
-                    {
-                        return RedirectToAction("AdminIndex", "Home");
-                    }
+                    //if (User.IsInRole("User"))
+                    //{
+                    //    return RedirectToAction("UserView", "Home");
+                    //}
 
                     if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                     {

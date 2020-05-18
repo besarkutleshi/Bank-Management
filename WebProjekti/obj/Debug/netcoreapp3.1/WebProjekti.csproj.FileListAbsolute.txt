@@ -360,3 +360,5 @@ C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Credit\MyCredits.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Transaction\PayCredit.cshtml.g.cs
 C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Transaction\ListPayment.cshtml.g.cs
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Shared\HomeLayout.cshtml.g.cs
+C:\Users\Admin\Desktop\WebProjekti\WebProjekti\obj\Debug\netcoreapp3.1\Razor\Views\Home\UserView.cshtml.g.cs

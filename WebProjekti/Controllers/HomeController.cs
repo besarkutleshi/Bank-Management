@@ -18,6 +18,12 @@ namespace WebProjekti.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
+        public IActionResult UserView()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             return View();

@@ -2,6 +2,12 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
+@{ 
+    ViewBag.Title = "Login";
+    Layout = null;
+    Layout = "~/Views/Shared/HomeLayout.cshtml";
+}
+
 <div class="container">
     <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
