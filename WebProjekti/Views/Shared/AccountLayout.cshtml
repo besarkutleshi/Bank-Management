@@ -1,0 +1,66 @@
+﻿@inject SignInManager<DataAccessLayer.ApplicationUser> SignInManager
+@inject UserManager<DataAccessLayer.ApplicationUser> UserManager
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebProjekti</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/css/Login.css" rel="stylesheet" />
+    <link href="~/css/style1.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <link href="~/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper  d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="p-4 pt-5">
+                <h2 class="text-center" style="color:white">Bank</h2><br />
+                <ul class="list-unstyled components mb-5">
+                    <li>
+                        <a asp-action="Index" asp-controller="Home">Home</a>
+                    </li>
+                    <li>
+                        <a asp-action="Register" asp-controller="Account">Register</a>
+                    </li>
+                    <li>
+                        <a asp-action="ForgotPassword" asp-controller="Account">Forgot Password</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="content" class="p-4 p-md-5">
+            <div class="">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer class="border-top footer text-muted">
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/popper.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/dataTables.bootstrap4.js"></script>
+    <script src="~/js/datatables-demo.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.easing.min.js"></script>
+    <script src="~/js/sb-admin-2.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

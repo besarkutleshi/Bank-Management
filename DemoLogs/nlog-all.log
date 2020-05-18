@@ -876,3 +876,65 @@ Error Number:547,State:0,Class:16
 2020-05-18 14:14:44.9351|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
 2020-05-18 14:14:44.9606|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
 2020-05-18 14:15:13.5917|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-18 18:49:45.4628|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 18:49:45.5746|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 18:49:45.5879|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 18:51:30.0530|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 18:51:30.1628|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 18:51:30.1751|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 18:54:04.1251|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 18:54:04.2464|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 18:54:04.2593|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 18:54:44.8855|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 18:54:44.9884|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 18:54:45.0025|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 18:57:19.9631|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 18:57:20.0763|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 18:57:20.0895|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 18:58:26.0380|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 18:58:26.1577|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 18:58:26.1688|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 18:59:04.4270|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 18:59:04.5280|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 18:59:04.5414|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 18:59:42.5872|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 18:59:42.7040|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 18:59:42.7234|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 19:01:03.7676|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 19:01:03.8916|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 19:01:03.9067|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 19:02:51.3585|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
+2020-05-18 19:04:07.7628|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 19:04:07.8488|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 19:04:07.8650|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 19:17:56.3405|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 19:17:56.4597|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 19:17:56.4733|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 19:21:12.2391|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 19:21:12.3837|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 19:21:12.4035|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 19:22:23.8500|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 19:22:23.9473|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 19:22:23.9610|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 19:23:46.0475|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 19:23:46.1773|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 19:23:46.1877|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 19:24:29.6822|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 19:24:29.8539|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 19:24:29.8672|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 19:29:31.2688|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 19:29:31.3701|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 19:29:31.3862|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 19:33:02.3304|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 19:33:02.4472|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 19:33:02.4619|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 19:36:43.9536|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 19:36:44.0734|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 19:36:44.0869|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 19:39:13.0559|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 19:39:13.1828|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 19:39:13.2008|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 19:44:04.2075|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2020-05-18 19:44:04.3168|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2020-05-18 19:44:04.3386|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Admin\Desktop\WebProjekti\WebProjekti
+2020-05-18 19:44:44.8117|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No type was specified for the decimal column 'MaxTotal' on entity type 'SavingAccounts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'.
