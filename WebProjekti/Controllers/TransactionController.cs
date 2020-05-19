@@ -8,11 +8,13 @@ using DataAccessLayer.Reports;
 using EntityLayer.Accounts;
 using EntityLayer.Credits;
 using EntityLayer.Transactions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace WebProjekti.Controllers
 {
+    [Authorize(Roles = "Admin,Super Admin,User")]
     public class TransactionController : Controller
     {
         private readonly TransactionRepository _transactionRepository;

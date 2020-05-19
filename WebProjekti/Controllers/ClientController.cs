@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using DataAccessLayer.Persons;
 using EntityLayer.Persons;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebProjekti.Controllers
 {
+    [Authorize(Roles = "Admin,Super Admin")]
     public class ClientController : Controller
     {
         private readonly ClientRepository _clientRepository;

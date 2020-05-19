@@ -7,6 +7,8 @@ using DataAccessLayer.Persons;
 using DataAccessLayer.Cards;
 using EntityLayer.Persons;
 using EntityLayer.Accounts;
+using Microsoft.AspNetCore.Authorization;
+
 namespace WebProjekti.Controllers
 {
     public class CardController : Controller
@@ -19,6 +21,8 @@ namespace WebProjekti.Controllers
             _personRepository = personRepository;
             _accountRepository = savingAccounts;
         }
+
+        [Authorize(Roles ="Admin,Super Admin")]
         [HttpGet]
         public async Task<IActionResult> InsertSavingAccount()
         {
@@ -26,6 +30,7 @@ namespace WebProjekti.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin,Super Admin")]
         [HttpPost]
         public async Task<IActionResult> InsertSavingAccount(SavingAccounts obj)
         {
@@ -39,6 +44,7 @@ namespace WebProjekti.Controllers
             return View("Error");
         }
 
+        [Authorize(Roles = "Admin,Super Admin")]
         [HttpGet]
         public async Task<IActionResult> InsertCheckingAccount()
         {
@@ -46,6 +52,7 @@ namespace WebProjekti.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin,Super Admin")]
         [HttpPost]
         public async Task<IActionResult> InsertCheckingAccount(CheckingAccounts obj)
         {
@@ -59,6 +66,7 @@ namespace WebProjekti.Controllers
             return View("Error");
         }
 
+        [Authorize(Roles = "Admin,Super Admin")]
         [HttpGet]
         public async Task<IActionResult> AccountsList()
         {
@@ -71,6 +79,7 @@ namespace WebProjekti.Controllers
         }
 
 
+        [Authorize(Roles = "Admin,Super Admin,User")]
         [HttpGet]
         public async Task<IActionResult> MyCheckingAccounts(string email)
         {
@@ -78,6 +87,7 @@ namespace WebProjekti.Controllers
             return View(checkingAccounts);
         }
 
+        [Authorize(Roles = "Admin,Super Admin,User")]
         [HttpGet]
         public async Task<IActionResult> MySavingAccounts(string email)
         {
@@ -85,6 +95,7 @@ namespace WebProjekti.Controllers
             return View(savingAccounts);
         }
 
+        [Authorize(Roles = "Admin,Super Admin,User")]
         [HttpGet]
         public async Task<IActionResult> CheckingAccountDetails(string id)
         {
@@ -92,6 +103,7 @@ namespace WebProjekti.Controllers
             return View(obj);
         }
 
+        [Authorize(Roles = "Admin,Super Admin,User")]
         [HttpGet]
         public async Task<IActionResult> SavingAccountDetails(string id)
         {

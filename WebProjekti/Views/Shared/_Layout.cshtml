@@ -29,16 +29,54 @@
                     <p style="color:wheat">Welcome <br /> @User.Identity.Name</p>
                     <ul class="list-unstyled components mb-5">
                         <li>
-                            <a asp-action="Login" asp-controller="Account">Home</a>
+                            <a asp-action="Index" asp-controller="Home">Home</a>
                         </li>
                         <li>
-                            <a href="#">About</a>
+                            <a href="#myaccounts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">My Account's</a>
+                            <ul class="collapse list-unstyled" id="myaccounts">
+                                <li>
+                                    <a asp-action="MyCheckingAccounts" asp-controller="Card"
+                                       asp-route-email="@User.Identity.Name">Checking Account</a>
+                                </li>
+                                <li>
+                                    <a asp-action="MySavingAccounts" asp-controller="Card"
+                                       asp-route-email="@User.Identity.Name">Saving Accounts</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="#">Contact</a>
+                            <a asp-action="MyCredits" asp-controller="Credit" asp-route-email="@User.Identity.Name">My Credit's</a>
                         </li>
                         <li>
-                            <a href="#">Services</a>
+                            <a href="#myowntransactions" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">My Transaction's</a>
+                            <ul class="collapse list-unstyled" id="myowntransactions">
+                                <li>
+                                    <a asp-action="ListDeposits" asp-controller="Transaction">Deposits</a>
+                                </li>
+                                <li>
+                                    <a asp-action="ListTransfers" asp-controller="Transaction">Transfers</a>
+                                </li>
+                                <li>
+                                    <a asp-action="ListDrawals" asp-controller="Transaction">With Drawals</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#mytransactions" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Make Transaction's</a>
+                            <ul class="collapse list-unstyled" id="mytransactions">
+                                <li>
+                                    <a asp-action="Deposit" asp-controller="Transaction">Deposit</a>
+                                </li>
+                                <li>
+                                    <a asp-action="Transfer" asp-controller="Transaction">Transfer</a>
+                                </li>
+                                <li>
+                                    <a asp-action="WithDrawal" asp-controller="Transaction">With Drawal</a>
+                                </li>
+                                <li>
+                                    <a asp-action="PayCredit" asp-controller="Transaction">Pay Credit</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#Client" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage Client's</a>
@@ -117,8 +155,7 @@
                     <p style="color:wheat">Welcome <br /> @User.Identity.Name</p>
                     <ul class="list-unstyled components mb-5">
                         <li>
-
-                            <a asp-action="Login" asp-controller="Account">Home</a>
+                            <a asp-action="Index" asp-controller="Home">Home</a>
                         </li>
                         <li>
                             <a href="#myaccounts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">My Account's</a>
@@ -182,7 +219,7 @@
                     <h2 class="text-center" style="color:white">Bank</h2><br />
                     <ul class="list-unstyled components mb-5">
                         <li>
-                            <a asp-action="Login" asp-controller="Account">Home</a>
+                            <a asp-action="Index" asp-controller="Home">Home</a>
                         </li>
                         <li>
                             <a href="#">About</a>

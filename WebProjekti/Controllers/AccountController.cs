@@ -216,7 +216,11 @@ namespace WebProjekti.Controllers
 
             if (signiInResult.Succeeded)
             {
-                return LocalRedirect(returnUrl);
+                CurrentClient = await _employeeRepository.GetPersons(user.ClientID);
+                if (returnUrl == "/")
+                    return Redirect("AdminView");
+                else
+                    return Redirect(returnUrl);
             }
             else
             {
@@ -256,6 +260,11 @@ namespace WebProjekti.Controllers
                     }
                     await userManager.AddLoginAsync(user, info);
                     await signInManager.SignInAsync(user, isPersistent: false);
+                    CurrentClient = await _employeeRepository.GetPersons(user.ClientID);
+                    if (string.IsNullOrEmpty(returnUrl))
+                    {
+                        return RedirectToAction("AdminView");
+                    }
 
 
                     return Redirect(returnUrl);
@@ -264,6 +273,12 @@ namespace WebProjekti.Controllers
                 ViewBag.Error = "Please contact support on besarkutla.7@gmail.com";
                 return View("Error");
             }
+        }
+
+        [HttpGet]
+        public IActionResult AdminView()
+        {
+            return View();
         }
 
         [HttpPost]
@@ -294,10 +309,6 @@ namespace WebProjekti.Controllers
                 if (result.Succeeded)
                 {
                     CurrentClient = await _employeeRepository.GetPersons(user.ClientID);
-                    if(CurrentClient == null)
-                    {
-                        CurrentClient = await _employeeRepository.GetPersons(user.ClientID);
-                    }
                     var us = await userManager.FindByEmailAsync(model.Email);
                     var roles = await userManager.GetRolesAsync(us);
                     if (string.IsNullOrEmpty(returnUrl))
@@ -306,7 +317,7 @@ namespace WebProjekti.Controllers
                         {
                             if (item == "Admin" || item == "Super Admin")
                             {
-                                return RedirectToAction("AdminIndex", "Home");
+                                return RedirectToAction("AdminView");
                             }
                             if (item == "User")
                             {

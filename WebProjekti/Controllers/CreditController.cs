@@ -6,6 +6,7 @@ using DataAccessLayer.Credit;
 using DataAccessLayer.Persons;
 using EntityLayer.Credits;
 using EntityLayer.Persons;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebProjekti.Controllers
@@ -21,6 +22,7 @@ namespace WebProjekti.Controllers
             _personRepository = personRepository;
         }
 
+        [Authorize(Roles = "Admin,Super Admin")]
         [HttpGet]
         public async Task<IActionResult> InsertCredit()
         {
@@ -28,6 +30,7 @@ namespace WebProjekti.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Admin,Super Admin")]
         [HttpPost]
         public async Task<IActionResult> InsertCredit(Credits obj)
         {
@@ -40,6 +43,8 @@ namespace WebProjekti.Controllers
             return View("Error");
         }
 
+
+        [Authorize(Roles = "Admin,Super Admin")]
         [HttpPost]
         public async Task<IActionResult> DeleteCredit(int id)
         {
@@ -52,6 +57,7 @@ namespace WebProjekti.Controllers
             return View("Error");
         }
 
+        [Authorize(Roles = "Admin,Super Admin")]
         [HttpPost]
         public async Task<IActionResult> UpdateCredit(Credits obj)
         {
@@ -64,6 +70,7 @@ namespace WebProjekti.Controllers
             return View("Error");
         }
 
+        [Authorize(Roles = "Admin,Super Admin")]
         [HttpGet]
         public async Task<IActionResult> ListCredits()
         {
@@ -71,6 +78,7 @@ namespace WebProjekti.Controllers
             return View(credits);
         }
 
+        [Authorize(Roles = "Admin,Super Admin")]
         [HttpGet]
         public async Task<IActionResult> UpdateCredit(int id)
         {
@@ -81,6 +89,7 @@ namespace WebProjekti.Controllers
             return View(obj);
         }
 
+        [Authorize(Roles = "Admin,Super Admin,User")]
         [HttpGet]
         public async Task<IActionResult> CreditDetails(string id)
         {
@@ -88,6 +97,7 @@ namespace WebProjekti.Controllers
             return View(obj);
         }
 
+        [Authorize(Roles = "Admin,Super Admin,User")]
         [HttpGet]
         public async Task<IActionResult> MyCredits(string email)
         {
