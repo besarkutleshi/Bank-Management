@@ -1,6 +1,7 @@
 ﻿using EntityLayer.Persons;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace EntityLayer.Accounts
@@ -8,6 +9,7 @@ namespace EntityLayer.Accounts
     public abstract class Transaction
     {
         public int ID { get; set; }
+        [Required]
         public string FullName { get; set; }
         public int ClientID { get; set; }
         public virtual Persons.Persons Client { get; set; }

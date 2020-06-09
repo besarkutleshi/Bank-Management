@@ -6,18 +6,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EntityLayer.Departaments;
 using EntityLayer.Entity;
 
 namespace DataAccessLayer.Departaments
 {
     public class DepartamentRepository
     {
+        
         private readonly ApplicationDbContext _context;
 
-        public DepartamentRepository(ApplicationDbContext applicationDb)
+        public DepartamentRepository(ApplicationDbContext context)
         {
-            this._context = applicationDb;
+            _context = context;
         }
 
         public List<EntityLayer.Departaments.Departaments> GetDepartaments()

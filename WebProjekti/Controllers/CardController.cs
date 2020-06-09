@@ -34,14 +34,19 @@ namespace WebProjekti.Controllers
         [HttpPost]
         public async Task<IActionResult> InsertSavingAccount(SavingAccounts obj)
         {
-            obj.Account.StartDate = DateTime.Now;
-            if (await _accountRepository.Insert(obj) != null)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("AccountsList");
+                obj.Account.StartDate = DateTime.Now;
+                if (await _accountRepository.Insert(obj) != null)
+                {
+                    return RedirectToAction("AccountsList");
+                }
+                ViewBag.ErrorTitle = $"Error";
+                ViewBag.ErrorMessage = $"Not Register";
+                return View("Error");
             }
-            ViewBag.ErrorTitle = $"Error";
-            ViewBag.ErrorMessage = $"Not Register";
-            return View("Error");
+            ViewBag.Clients = await _personRepository.GetPersons();
+            return View(obj);
         }
 
         [Authorize(Roles = "Admin,Super Admin")]

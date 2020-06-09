@@ -13,7 +13,7 @@ namespace WebProjekti.Models.Account
         [Required]
         [EmailAddress]
         [Remote(action: "IsEmailInUse",controller:"Account")]
-        [ValidEmailDomainAttribute(allowedDomain:"gmail.com",ErrorMessage ="Email domain must be gmail.com")]
+        [ValidEmailDomainAttribute(allowedDomain:"gmail.com")]
         public string Email { get; set; }
         [Required]
         [DataType(DataType.Password)]

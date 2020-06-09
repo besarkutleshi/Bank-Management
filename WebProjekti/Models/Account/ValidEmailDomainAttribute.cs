@@ -11,14 +11,26 @@ namespace WebProjekti.Models.Account
         private readonly string allowedDomain;
 
         public ValidEmailDomainAttribute(string allowedDomain)
+            :base("{0} domain must be gmail")
         {
             this.allowedDomain = allowedDomain;
         }
 
-        public override bool IsValid(object value)
+        //public override bool IsValid(object value)
+        //{
+        //    string[] strings = value.ToString().Split('@');
+        //    return strings[1].ToUpper() == allowedDomain.ToUpper();
+        //}
+
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             string[] strings = value.ToString().Split('@');
-            return strings[1].ToUpper() == allowedDomain.ToUpper();
+            if(strings[1].ToUpper() != allowedDomain.ToUpper())
+            {
+                var error = FormatErrorMessage(validationContext.DisplayName);
+                return new ValidationResult(error);
+            }
+            return ValidationResult.Success;
         }
     }
 }
